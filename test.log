@@ -1,0 +1,34 @@
+2022/12/18 14:52:21 main.go:158: 
+2022/12/18 14:52:21 main.go:159: 
+2022/12/18 14:53:49 main.go:158: 
+2022/12/18 14:53:49 main.go:159: 
+2022/12/18 15:03:25 main.go:158: name:
+2022/12/18 15:03:25 main.go:159: email:
+2022/12/18 15:06:35 main.go:158: name:
+2022/12/18 15:06:35 main.go:159: email:
+2022/12/18 17:39:40 main.go:158: name:
+2022/12/18 17:39:40 main.go:159: email:
+2022/12/18 17:40:27 main.go:158: name:
+2022/12/18 17:40:27 main.go:159: email:
+2022/12/18 17:41:29 main.go:158: name:
+2022/12/18 17:41:29 main.go:159: email:
+2022/12/18 17:47:47 main.go:158: name:
+2022/12/18 17:47:47 main.go:159: email:
+2022/12/18 17:54:04 main.go:158: name:
+2022/12/18 17:54:04 main.go:159: email:
+2022/12/18 18:11:13 main.go:158: name:
+2022/12/18 18:11:13 main.go:159: email:
+2022/12/18 21:13:09 main.go:158: name:POSTMAN
+2022/12/18 21:13:09 main.go:159: email:request@gmail.com
+2022/12/18 21:47:42 main.go:163: name:POSTMAN2
+2022/12/18 21:47:42 main.go:164: email:request@gmail.com2
+2022/12/18 21:53:29 main.go:163: name:POSTMAN3
+2022/12/18 21:53:29 main.go:164: email:request@gmail.com3
+2022/12/18 21:55:24 main.go:163: name:
+2022/12/18 21:55:24 main.go:164: email:
+2022/12/18 22:00:38 main.go:163: name:
+2022/12/18 22:00:38 main.go:164: email:
+2022/12/19 16:01:52 main.go:163: map[Accept:[application/json, text/plain, */*] Accept-Encoding:[gzip, deflate, br] Accept-Language:[ja,en-US;q=0.9,en;q=0.8] Connection:[keep-alive] Content-Length:[42] Content-Type:[application/json] Origin:[http://localhost:3000] Referer:[http://localhost:3000/] Sec-Ch-Ua:["Not?A_Brand";v="8", "Chromium";v="108", "Google Chrome";v="108"] Sec-Ch-Ua-Mobile:[?0] Sec-Ch-Ua-Platform:["Windows"] Sec-Fetch-Dest:[empty] Sec-Fetch-Mode:[cors] Sec-Fetch-Site:[same-site] User-Agent:[Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36]]
+2022/12/19 16:01:52 main.go:164: &{0xc0000b6030 <nil> <nil> false true {0 0} false false false 0x7ff69f3d6f20}
+2022/12/19 17:27:54 main.go:146: &{test test@example.com}
+2022/12/19 17:56:53 main.go:146: &{test test@example.com}
