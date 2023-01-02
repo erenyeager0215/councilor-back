@@ -2,7 +2,6 @@ package main
 
 import (
 	"database/sql"
-	"fmt"
 	"io"
 	"log"
 	"net/http"
@@ -28,6 +27,12 @@ var Db *sql.DB
 type User struct {
 	Name  string `json:"name" xml:"name" form:"name" query:"name"`
 	Email string `json:"email" xml:"email" form:"email" query:"email"`
+}
+
+type Councilor struct{
+	Id int `json:"id" form:"id" query:"id"`
+	Name string `json:"name" form:"name" query:"name"`
+	Address string `json:"address" form:"address" query:"address"`
 }
 
 type Book struct {
@@ -107,20 +112,20 @@ func main() {
 	}))
 
 	//log
-	e.Use(func(next echo.HandlerFunc) echo.HandlerFunc {
-        return func(c echo.Context) error {
-            if err := next(c); err != nil {
-                c.Error(err)
-            }
+	// e.Use(func(next echo.HandlerFunc) echo.HandlerFunc {
+    //     return func(c echo.Context) error {
+    //         if err := next(c); err != nil {
+    //             c.Error(err)
+    //         }
 
-            req_header := fmt.Sprintf("%#v", c.Request().Header)
-            req_body := fmt.Sprintf("%#v", c.Request().Body)
+    //         req_header := fmt.Sprintf("%#v", c.Request().Header)
+    //         req_body := fmt.Sprintf("%#v", c.Request().Body)
 
-            os.Stdout.Write([]byte(req_header + "\n"))
-            os.Stdout.Write([]byte(req_body + "\n"))
-            return next(c)
-        }
-    })
+    //         os.Stdout.Write([]byte(req_header + "\n"))
+    //         os.Stdout.Write([]byte(req_body + "\n"))
+    //         return next(c)
+    //     }
+    // })
 
 	//----------------------------------------------------------------------------
 	// Custom middleware
@@ -132,6 +137,8 @@ func main() {
 	})
 
 	e.GET("/show", show)
+	e.GET("/councilors",getCouncilors)
+	e.GET("/councilor/:id",getCouncilor)
 	e.POST("/save", save)
 	e.POST("/save1", save1)
 	e.POST("/books", books)
@@ -167,6 +174,49 @@ func getUser(c echo.Context) error {
 	return c.String(http.StatusOK, id)
 }
 
+func getCouncilor(c echo.Context)error{
+	var councilor Councilor
+	id:= c.Param("id")
+	log.Print(id)
+	Db,_:= sql.Open("sqlite3","././coucils.sql")
+	defer Db.Close()
+	cmd:= "SELECT * FROM councils WHERE id = ?"
+	err := Db.QueryRow(cmd,id).Scan(
+		&councilor.Id,
+		&councilor.Name,
+		&councilor.Address,
+	)
+	if err != nil{
+		log.Fatal(err)
+	}
+	
+	return c.JSON(http.StatusCreated, councilor)
+}
+
+func getCouncilors(c echo.Context)error{
+	Db, _ := sql.Open("sqlite3", "./coucils.sql")
+	defer Db.Close()
+	cmd:= "SELECT * FROM councils"
+	rows,err := Db.Query(cmd)
+	if err != nil {
+		log.Fatalln(err)
+	}
+	var councilors []Councilor
+	for rows.Next(){
+		var councilor Councilor
+		err = rows.Scan(
+			&councilor.Id,
+			&councilor.Name,
+			&councilor.Address,
+		)
+		if err != nil{
+			log.Fatal(err)
+		}
+		councilors = append(councilors,councilor)
+	}
+	return c.JSON(http.StatusCreated, councilors)
+}
+
 // http://localhost:1323/show?team=x-men&member=wolverine
 func show(c echo.Context) error {
 	// Get team and member from the query string
@@ -174,6 +224,8 @@ func show(c echo.Context) error {
 	member := c.QueryParam("member")
 	return c.String(http.StatusOK, "team:"+team+", member:"+member)
 }
+
+
 
 // e.POST("/save", save)
 func save(c echo.Context) error {

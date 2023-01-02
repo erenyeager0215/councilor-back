@@ -32,3 +32,26 @@
 2022/12/19 16:01:52 main.go:164: &{0xc0000b6030 <nil> <nil> false true {0 0} false false false 0x7ff69f3d6f20}
 2022/12/19 17:27:54 main.go:146: &{test test@example.com}
 2022/12/19 17:56:53 main.go:146: &{test test@example.com}
+2023/01/01 16:47:41 main.go:177: no such table: councils
+2023/01/01 16:50:57 main.go:176: no such table: councils
+2023/01/01 17:06:50 main.go:182: no such table: councils
+2023/01/01 23:48:53 main.go:189: no such table: councils
+2023/01/01 23:51:38 main.go:180: 1
+2023/01/01 23:51:38 main.go:190: no such table: councils
+2023/01/01 23:52:49 main.go:180: 1
+2023/01/02 00:03:59 main.go:189: sql: no rows in result set
+2023/01/02 00:05:40 main.go:180: undefined
+2023/01/02 00:05:40 main.go:190: sql: no rows in result set
+2023/01/02 00:08:11 main.go:180: 1
+2023/01/02 09:48:57 main.go:180: 2
+2023/01/02 09:49:03 main.go:180: 1
+2023/01/02 09:52:14 main.go:180: 1
+2023/01/02 09:53:04 main.go:180: 1
+2023/01/02 09:55:01 main.go:180: 1
+2023/01/02 09:57:20 main.go:180: 1
+2023/01/02 09:57:44 main.go:180: 1
+2023/01/02 09:59:43 main.go:180: 1
+2023/01/02 10:02:57 main.go:180: 1
+2023/01/02 10:03:45 main.go:180: 1
+2023/01/02 10:04:40 main.go:180: 1
+2023/01/02 10:04:54 main.go:180: 2
