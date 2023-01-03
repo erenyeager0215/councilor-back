@@ -55,3 +55,17 @@
 2023/01/02 10:03:45 main.go:180: 1
 2023/01/02 10:04:40 main.go:180: 1
 2023/01/02 10:04:54 main.go:180: 2
+2023/01/02 11:37:39 main.go:180: 1
+2023/01/02 11:37:48 main.go:180: 1
+2023/01/02 11:37:51 main.go:180: 1
+2023/01/03 23:07:45 main.go:153: &{aaaaa 1111111}
+2023/01/03 23:53:23 main.go:143: &{aaaaa 1111111}
+2023/01/03 23:54:35 main.go:143: &{aa 1111111}
+2023/01/03 23:54:54 main.go:179: sql: expected 1 destination arguments in Scan, not 2
+2023/01/03 23:55:55 main.go:179: sql: expected 1 destination arguments in Scan, not 2
+2023/01/03 23:58:06 main.go:178: { }
+2023/01/03 23:58:06 main.go:180: sql: expected 1 destination arguments in Scan, not 2
+2023/01/03 23:59:30 main.go:178: {aa 1111111}
+2023/01/03 23:59:30 main.go:192: code=400, message=EOF
+2023/01/04 00:01:08 main.go:187: {aa 1111111}
+2023/01/04 00:01:08 main.go:192: code=400, message=EOF

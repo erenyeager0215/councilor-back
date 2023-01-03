@@ -2,10 +2,8 @@ package main
 
 import (
 	"database/sql"
-	"io"
 	"log"
 	"net/http"
-	"os"
 	"strconv"
 	"sync"
 	"time"
@@ -33,12 +31,6 @@ type Councilor struct{
 	Id int `json:"id" form:"id" query:"id"`
 	Name string `json:"name" form:"name" query:"name"`
 	Address string `json:"address" form:"address" query:"address"`
-}
-
-type Book struct {
-	Title     string `json:"title" form:"title" query:"title"`
-	FirstName string `json:"firstname"  form:"firstname" query:"firstname"`
-	LastName  string `json:"lastname"  form:"lastname" query:"lastname"`
 }
 
 type (
@@ -136,12 +128,10 @@ func main() {
 		return c.String(http.StatusOK, "Hello, World!")
 	})
 
-	e.GET("/show", show)
+	
 	e.GET("/councilors",getCouncilors)
 	e.GET("/councilor/:id",getCouncilor)
-	e.POST("/save", save)
-	e.POST("/save1", save1)
-	e.POST("/books", books)
+	e.POST("/login",login)
 	// e.PUT("/users/:id", updateUser)
 	// e.DELETE("/users/:id", deleteUser)
 
@@ -167,12 +157,51 @@ func main() {
 	e.Logger.Fatal(e.Start(":1323"))
 }
 
-// e.GET("/users/:id", getUser)
-func getUser(c echo.Context) error {
-	// User ID from path `users/:id`
-	id := c.Param("id")
-	return c.String(http.StatusOK, id)
-}
+
+	// ----------------------------------------------------------
+	// login機能実装
+	// ----------------------------------------------------------
+	func getUserByNickName(c echo.Context) (User,error){
+		u:= new(User)
+		var user User
+		if err:= c.Bind(u); err != nil{
+			log.Fatal(err)
+		}
+		Db,_:= sql.Open("sqlite3","./test.sql")
+		defer Db.Close()
+
+		cmd:= "SELECT * from test_table WHERE name = ?"
+		err:= Db.QueryRow(cmd,u.Name).Scan(
+			&user.Name,
+			&user.Email,
+		)
+		if err != nil {
+			log.Fatal(err)
+		}
+		return user,err
+	}
+	
+	func login(c echo.Context)error{
+		u:= new(User)
+		user,err:= getUserByNickName(c)
+		log.Println(user)
+		if err != nil{
+			log.Fatal(err)
+		}
+		if err= c.Bind(u); err != nil{
+			log.Fatal(err)
+		}
+		if user.Email == u.Email{
+			return c.JSON(http.StatusCreated, user)
+		}else{
+			return c.JSON(http.StatusCreated,"NotFound")
+		}
+	}
+
+	// ----------------------------------------------------------
+	// login機能実装
+	// ----------------------------------------------------------
+
 
 func getCouncilor(c echo.Context)error{
 	var councilor Councilor
@@ -217,85 +246,5 @@ func getCouncilors(c echo.Context)error{
 	return c.JSON(http.StatusCreated, councilors)
 }
 
-// http://localhost:1323/show?team=x-men&member=wolverine
-func show(c echo.Context) error {
-	// Get team and member from the query string
-	team := c.QueryParam("team")
-	member := c.QueryParam("member")
-	return c.String(http.StatusOK, "team:"+team+", member:"+member)
-}
 
 
-
-// e.POST("/save", save)
-func save(c echo.Context) error {
-	// Get name and email
-	name := c.FormValue("name")
-	email := c.FormValue("email")
-
-	
-	u := &User{}
-	u.Name = name
-	u.Email = email
-
-	Db, _ := sql.Open("sqlite3", "./test.sql")
-	defer Db.Close()
-
-	cmd := "INSERT INTO test_table(name,email)VALUES(?,?)"
-	_, err := Db.Exec(cmd, u.Name, u.Email)
-	if err != nil {
-		log.Fatalln(err)
-	}
-
-	return c.String(http.StatusOK, "name:"+name+", email:"+email)
-}
-
-func save1(c echo.Context) error {
-	// Get name
-	name := c.FormValue("name")
-	// Get avatar
-	avatar, err := c.FormFile("avatar")
-	if err != nil {
-		return err
-	}
-
-	// Source
-	src, err := avatar.Open()
-	if err != nil {
-		return err
-	}
-	defer src.Close()
-
-	// Destination
-	dst, err := os.Create(avatar.Filename)
-	if err != nil {
-		return err
-	}
-	defer dst.Close()
-
-	// Copy
-	if _, err = io.Copy(dst, src); err != nil {
-		return err
-	}
-
-	return c.HTML(http.StatusOK, "<b>Thank you! "+name+"</b>")
-}
-
-// e.POST("/books", books)
-// formで受けたデータをJSONに変換する
-func books(c echo.Context) error {
-	name := c.FormValue("title")
-	firstName := c.FormValue("firstName")
-	lastName := c.FormValue("lastName")
-	b := &Book{}
-	b.Title = name
-	b.FirstName = firstName
-	b.LastName = lastName
-
-	if err := c.Bind(b); err != nil {
-		return err
-	}
-	return c.JSON(http.StatusCreated, b)
-}
-
-// return c.String(http.StatusOK, "name:"+name+", first:"+firstName+",lastName:"+lastName)
