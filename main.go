@@ -132,6 +132,7 @@ func main() {
 	e.GET("/councilors",getCouncilors)
 	e.GET("/councilor/:id",getCouncilor)
 	e.POST("/login",login)
+	e.POST("/create-account",createAccount)
 	// e.PUT("/users/:id", updateUser)
 	// e.DELETE("/users/:id", deleteUser)
 
@@ -161,7 +162,7 @@ func main() {
 	// ----------------------------------------------------------
 	// login機能実装
 	// ----------------------------------------------------------
-	func getUserByNickName(c echo.Context) (User,error){
+	func login(c echo.Context) error{
 		u:= new(User)
 		var user User
 		if err:= c.Bind(u); err != nil{
@@ -178,30 +179,41 @@ func main() {
 		if err != nil {
 			log.Fatal(err)
 		}
-		return user,err
-	}
-	
-	func login(c echo.Context)error{
-		u:= new(User)
-		user,err:= getUserByNickName(c)
-		log.Println(user)
-		if err != nil{
-			log.Fatal(err)
-		}
-		if err= c.Bind(u); err != nil{
-			log.Fatal(err)
-		}
-		if user.Email == u.Email{
+		if user.Email ==u.Email{
 			return c.JSON(http.StatusCreated, user)
 		}else{
 			return c.JSON(http.StatusCreated,"NotFound")
-		}
+		}	
 	}
-
+	
 	// ----------------------------------------------------------
 	// login機能実装
 	// ----------------------------------------------------------
 
+	// ----------------------------------------------------------
+	// サインアップ機能実装
+	// ----------------------------------------------------------
+		func createAccount(c echo.Context)error{
+			u:= new(User)
+			if err:= c.Bind(u); err != nil{
+				log.Fatal(err)
+			}
+			Db,_:=sql.Open("sqlite3","./test.sql")
+			defer Db.Close()
+			cmd:= "INSERT INTO test_table VALUES(?,?)"
+			_,err:= Db.Exec(cmd,u.Name,u.Email)
+			if err != nil{
+				log.Fatal(err)
+			}
+			return c.JSON(http.StatusCreated, "OK")
+		}
+	// ----------------------------------------------------------
+	// サインアップ機能実装
+	// ----------------------------------------------------------
+
+	// ----------------------------------------------------------
+	// 議員情報を取得
+	// ----------------------------------------------------------
 
 func getCouncilor(c echo.Context)error{
 	var councilor Councilor
@@ -246,5 +258,8 @@ func getCouncilors(c echo.Context)error{
 	return c.JSON(http.StatusCreated, councilors)
 }
 
+	// ----------------------------------------------------------
+	// 議員情報を取得
+	// ----------------------------------------------------------
 
-
+	

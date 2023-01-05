@@ -69,3 +69,8 @@
 2023/01/03 23:59:30 main.go:192: code=400, message=EOF
 2023/01/04 00:01:08 main.go:187: {aa 1111111}
 2023/01/04 00:01:08 main.go:192: code=400, message=EOF
+2023/01/05 06:26:58 main.go:187: {aaaaa 1111111}
+2023/01/05 06:26:58 main.go:192: code=400, message=EOF
+2023/01/05 06:27:57 main.go:200: {aa 1111111}
+2023/01/05 06:27:57 main.go:205: code=400, message=EOF
+2023/01/05 06:34:48 main.go:179: sql: no rows in result set
