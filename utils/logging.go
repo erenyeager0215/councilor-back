@@ -15,8 +15,10 @@ func LoggingSettings(logFile string) {
 	//引数にとった各writerへ書き込まれるwriterを戻り値として返す
 	multiLogFile := io.MultiWriter(os.Stdout, logfile)
 
+	//logのフォーマットを指定
 	log.SetFlags(log.Ldate | log.Ltime | log.Lshortfile)
 
 	//引数にio.writerをしてい
+	// logの出力先を指定
 	log.SetOutput(multiLogFile)
 }
