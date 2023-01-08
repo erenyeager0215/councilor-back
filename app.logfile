@@ -4,3 +4,11 @@
 2023/01/06 14:56:13 users.go:30: 2 values for 3 columns
 2023/01/06 15:23:04 users.go:49: no such column: name
 2023/01/06 15:23:38 users.go:49: sql: expected 4 destination arguments in Scan, not 3
+2023/01/06 22:41:04 councilors.go:34: no such column: adress
+2023/01/06 22:42:15 councilors.go:34: no such column: tel_nam
+2023/01/06 22:42:35 councilors.go:34: no such column: tel_nam
+2023/01/06 22:42:50 councilors.go:34: sql: Scan error on column index 0, name "id": destination not a pointer
+2023/01/06 22:51:01 councilors.go:43: no such column: adress
+2023/01/06 22:52:18 councilors.go:57: sql: Scan error on column index 0, name "id": destination not a pointer
+2023/01/06 23:00:39 users.go:48: sql: no rows in result set
+2023/01/06 23:03:12 users.go:48: sql: expected 1 destination arguments in Scan, not 2

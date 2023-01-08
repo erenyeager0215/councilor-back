@@ -1,12 +1,9 @@
 package main
 
 import (
-	"fmt"
-	"myapp/app/models"
+	"myapp/app/controllers"
 )
 
 func main() {
-	fmt.Println(models.Db)
-
-	
+controllers.StartMainServer()
 }

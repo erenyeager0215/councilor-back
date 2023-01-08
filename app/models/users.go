@@ -39,12 +39,10 @@ func Encrypt(plaintext string)(cryptext string){
 
 
 func GetUser(u *User)(user User,err error){
-	cmd:= "SELECT * from users WHERE nickname = ?"
+	cmd:= "SELECT id,nickname from users WHERE nickname = ?"
 	err= Db.QueryRow(cmd,u.NickName).Scan(
 			&user.ID,
 			&user.NickName,
-			&user.PassWord,
-			&user.CreatedAt,
 		)
 		if err != nil {
 			log.Fatal(err)
