@@ -29,25 +29,7 @@ type Councilor struct{
 	// ----------------------------------------------------------
 	// login機能実装
 	// ----------------------------------------------------------
-	func login(c echo.Context) error{
-		u:= new(models.User)		
-		if err:= c.Bind(u); err != nil{
-			log.Fatal(err)
-		}
-		// Db,_:= sql.Open("sqlite3","./test.sql")
-		// defer Db.Close()
-
-		user,err:=models.GetUser(u)
-		if err != nil{
-			log.Fatalln(err)
-		}
-
-		if models.Encrypt(u.PassWord) ==models.Encrypt(user.PassWord){
-			return c.JSON(http.StatusCreated, "OK")
-		}else{
-			return c.JSON(http.StatusCreated,"NotFound")
-		}	
-	}
+	
 	
 	// ----------------------------------------------------------
 	// login機能実装
@@ -79,8 +61,7 @@ func getCouncilor(c echo.Context)error{
 	var councilor Councilor
 	id:= c.Param("id")
 	log.Print(id)
-	// Db,_:= sql.Open("sqlite3","././coucils.sql")
-	// defer Db.Close()
+
 	cmd:= "SELECT * FROM councils WHERE id = ?"
 	err := Db.QueryRow(cmd,id).Scan(
 		&councilor.Id,
@@ -95,8 +76,6 @@ func getCouncilor(c echo.Context)error{
 }
 
 func getCouncilors(c echo.Context)error{
-	// Db, _ := sql.Open("sqlite3", "./coucils.sql")
-	// defer Db.Close()
 	var councilors []models.Councilor
 	councilors,err:=models.GetCouncilorList()
 	if err != nil{

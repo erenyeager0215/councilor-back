@@ -13,7 +13,7 @@ type Councilor struct {
 	Birthday  time.Time `json:"birthday"`
 	Adress    string `json:"address"`
 	TelNum    string `json:"tel"`
-	CreatedAt time.Time `json:"created_at"`
+	CreatedAt time.Time `json:"-"`
 	// Questions []Question
 }
 

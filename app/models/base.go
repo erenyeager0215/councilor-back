@@ -1,6 +1,7 @@
 package models
 
 import (
+	"crypto/sha1"
 	"database/sql"
 	"fmt"
 	"log"
@@ -16,6 +17,7 @@ var err error
 const(
 	tabelNameUser = "users"
 	tableNameCouncilor= "councilors"
+	tableNameQuestion= "questions"
 )
 
 func init(){
@@ -28,7 +30,8 @@ func init(){
 		id INTEGER PRIMARY KEY AUTOINCREMENT,
 		nickname STRING NOT NULL UNIQUE,
 		password STRING NOT NULL,
-		created_at DATETIME)`,tabelNameUser)
+		created_at DATETIME,
+		age STRING)`,tabelNameUser)
 
 	_,err = Db.Exec(cmdU)
 	if err != nil{
@@ -50,4 +53,25 @@ func init(){
 		if err != nil{
 			log.Fatalln(err)
 		}
+	
+		cmdQ := fmt.Sprintf(`CREATE TABLE IF NOT EXISTS %s(
+			id INTEGER PRIMARY KEY AUTOINCREMENT,
+			overview STRING,
+			category STRING,
+			content TEXT,
+			answer TEXT,
+			held_time STRING,
+			councilor_id INTEGER,
+			created_at DATETIME)`, tableNameQuestion)
+	
+		_,err:=Db.Exec(cmdQ)
+
+		if err != nil{
+			log.Fatalln(err)
+		}
+}
+
+func Encrypt(plaintext string)(cryptext string){
+	cryptext = fmt.Sprintf("%x",sha1.Sum([]byte(plaintext)))
+	return cryptext
 }

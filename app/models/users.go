@@ -1,8 +1,6 @@
 package models
 
 import (
-	"crypto/sha1"
-	"fmt"
 	"log"
 	"time"
 )
@@ -32,10 +30,7 @@ func (u *User)CreateUser()(err error){
 	return err
 }
 
-func Encrypt(plaintext string)(cryptext string){
-	cryptext = fmt.Sprintf("%x",sha1.Sum([]byte(plaintext)))
-	return cryptext
-}
+
 
 
 func GetUser(u *User)(user User,err error){
