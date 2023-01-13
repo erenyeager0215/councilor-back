@@ -32,7 +32,6 @@ func StartMainServer() {
 
 	//user情報をDBへ登録
 	e.POST("/register_user",registerUser)
-
 	e.POST("/login",login)
 
 	// Start server

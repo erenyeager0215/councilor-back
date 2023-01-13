@@ -18,8 +18,8 @@ func login(c echo.Context) error {
 	if err != nil {
 		log.Fatalln(err)
 	}
-
-	if models.Encrypt(u.PassWord) == models.Encrypt(user.PassWord) {
+	
+	if models.Encrypt(u.PassWord) == user.PassWord {
 		return c.JSON(http.StatusCreated, "OK")
 	} else {
 		return c.JSON(http.StatusCreated, "NotFound")
@@ -37,6 +37,6 @@ func registerUser(c echo.Context) error {
 	if err != nil {
 		log.Fatalln(err)
 	}
-	return c.JSON(http.StatusCreated, u)
+	return c.JSON(http.StatusCreated, "OK")
 }
 

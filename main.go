@@ -28,6 +28,10 @@ func main() {
 // 		}
 // 	fmt.Println(v)	
 
-
+// user:= new(models.User)
+// user.NickName= "test2"
+// user.PassWord="1"
+// user.CreateUser()
 	
+	// fmt.Println(models.Encrypt("1"))
 }

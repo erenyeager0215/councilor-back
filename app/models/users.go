@@ -8,7 +8,7 @@ import (
 type User struct {
 	ID        int
 	NickName  string `json:"nickname" form:"nickname" query:"nickname"`
-	PassWord  string `json:"-"`
+	PassWord  string `json:"password"`
 	CreatedAt time.Time `json:"created_at"`
 }
 
@@ -34,10 +34,10 @@ func (u *User)CreateUser()(err error){
 
 
 func GetUser(u *User)(user User,err error){
-	cmd:= "SELECT id,nickname from users WHERE nickname = ?"
-	err= Db.QueryRow(cmd,u.NickName).Scan(
-			&user.ID,
+	cmd:= "SELECT nickname,password from users WHERE nickname = ?"
+	err= Db.QueryRow(cmd,u.NickName).Scan(			
 			&user.NickName,
+			&user.PassWord,
 		)
 		if err != nil {
 			log.Fatal(err)

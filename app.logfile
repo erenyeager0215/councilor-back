@@ -54,3 +54,12 @@
 2023/01/11 23:41:31 route_question.go:16: 文字列をキャッチ
 2023/01/11 23:45:39 route_question.go:16: 文字列をキャッチ
 2023/01/11 23:45:42 route_question.go:16: 文字列をキャッチ
+2023/01/12 23:09:37 users.go:43: sql: no rows in result set
+2023/01/12 23:11:24 users.go:43: sql: no rows in result set
+2023/01/13 23:00:10 route_auth.go:21: 356a192b7913b04c54574d18c28d46e6395428ab
+2023/01/13 23:00:10 route_auth.go:22: da39a3ee5e6b4b0d3255bfef95601890afd80709
+2023/01/13 23:01:16 route_auth.go:21: 356a192b7913b04c54574d18c28d46e6395428ab
+2023/01/13 23:01:16 route_auth.go:22: 
+2023/01/13 23:02:09 route_auth.go:21: &{0 test2  0001-01-01 00:00:00 +0000 UTC}
+2023/01/13 23:02:09 route_auth.go:21: &{0 test2  0001-01-01 00:00:00 +0000 UTC}
+2023/01/13 23:57:55 route_auth.go:34: &{0 test3 2 0001-01-01 00:00:00 +0000 UTC}
