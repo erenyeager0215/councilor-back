@@ -5,39 +5,46 @@ import (
 	"time"
 )
 
+
+
 type Councilor struct {
 	Id        int    `json:"id"`
 	Name      string `json:"name"`
 	Commitee  string `json:"commitee"`
-	ImagePath string `json:"iamge"`
+	Image string `json:"image"`
 	Birthday  time.Time `json:"birthday"`
 	Adress    string `json:"address"`
-	TelNum    string `json:"tel"`
+	Contact    string `json:"contact"`
+	Url string `json:"url"`
 	CreatedAt time.Time `json:"-"`
 	// Questions []Question
 }
 
 
+
 func GetCouncilor(id int)(Councilor ,error){
 	var c Councilor
-	cmd:= "SELECT id,name,commitee,imagepath,birthday,address,tel_num FROM councilors WHERE id = ?"
+	cmd:= "SELECT id,name,commitee,image,birthday,address,contact,url FROM test_table WHERE id = ?"
 	err = Db.QueryRow(cmd,id).Scan(
 		&c.Id,
 		&c.Name,
 		&c.Commitee,
-		&c.ImagePath,
+		&c.Image,
 		&c.Birthday,
 		&c.Adress,
-		&c.TelNum,	 
-	)
+		&c.Contact,	 
+		&c.Url,
+	)	
 	if err != nil{
 		log.Fatal(err)
 	}
 	return c,err
 }
 
+
+
 func GetCouncilorList()(councilors []Councilor,err error){
-	cmd:= "SELECT id,name,commitee,imagepath,birthday,address,tel_num FROM councilors"
+	cmd:= "SELECT id,name,commitee,image,birthday,address,contact,url FROM test_table"
 	rows,err := Db.Query(cmd)
 	if err != nil{
 		log.Fatalln(err)		
@@ -48,10 +55,11 @@ func GetCouncilorList()(councilors []Councilor,err error){
 			&c.Id,
 			&c.Name,
 			&c.Commitee,
-			&c.ImagePath,
+			&c.Image,
 			&c.Birthday,
 			&c.Adress,
-			&c.TelNum,
+			&c.Contact,
+			&c.Url,
 		)
 		if err != nil{
 			log.Fatalln(err)

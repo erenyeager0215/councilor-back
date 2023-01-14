@@ -18,6 +18,7 @@ const(
 	tabelNameUser = "users"
 	tableNameCouncilor= "councilors"
 	tableNameQuestion= "questions"
+	tableNameTest= "test_table"
 )
 
 func init(){
@@ -66,6 +67,22 @@ func init(){
 	
 		_,err:=Db.Exec(cmdQ)
 
+		if err != nil{
+			log.Fatalln(err)
+		}
+
+		cmdT:= fmt.Sprintf(`CREATE TABLE IF NOT EXISTS %s(
+			id INTEGER PRIMARY KEY AUTOINCREMENT,
+			name STRING,
+			commitee STRING,
+			image STRING,
+			address STRING,
+			contact STRING,
+			birthday DATETIME,
+			url STRING,
+			created_at DATETIME)`,tableNameTest)
+	
+		_,err = Db.Exec(cmdT)
 		if err != nil{
 			log.Fatalln(err)
 		}
