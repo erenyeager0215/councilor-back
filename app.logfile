@@ -118,3 +118,198 @@
 2023/01/14 22:52:36 route_question.go:23: 数字をキャッチ
 2023/01/14 22:54:45 route_question.go:23: 数字をキャッチ
 2023/01/14 22:58:35 route_question.go:23: 数字をキャッチ
+2023/01/15 11:36:47 route_question.go:23: 数字をキャッチ
+2023/01/15 11:46:03 route_question.go:23: 数字をキャッチ
+2023/01/15 11:46:25 route_question.go:23: 数字をキャッチ
+2023/01/15 11:48:42 route_question.go:23: 数字をキャッチ
+2023/01/15 12:01:04 route_question.go:23: 数字をキャッチ
+2023/01/15 12:08:03 route_question.go:23: 数字をキャッチ
+2023/01/15 13:07:46 route_question.go:23: 数字をキャッチ
+2023/01/15 13:08:03 route_question.go:23: 数字をキャッチ
+2023/01/15 15:18:01 base.go:41: near ")": syntax error
+2023/01/15 15:19:06 users.go:31: 3 values for 4 columns
+2023/01/15 17:14:34 users.go:39: UNIQUE constraint failed: users.nickname
+2023/01/15 22:44:06 route_question.go:23: 数字をキャッチ
+2023/01/15 22:44:15 route_question.go:23: 数字をキャッチ
+2023/01/15 22:45:52 route_question.go:23: 数字をキャッチ
+2023/01/15 22:46:03 route_question.go:16: 文字列をキャッチ
+2023/01/16 22:56:21 route_question.go:23: 数字をキャッチ
+2023/01/16 23:16:57 route_question.go:23: 数字をキャッチ
+2023/01/16 23:20:09 route_question.go:23: 数字をキャッチ
+2023/01/16 23:21:17 route_question.go:23: 数字をキャッチ
+2023/01/16 23:21:42 route_question.go:23: 数字をキャッチ
+2023/01/16 23:28:11 route_question.go:23: 数字をキャッチ
+2023/01/16 23:28:41 route_question.go:23: 数字をキャッチ
+2023/01/16 23:29:26 route_question.go:23: 数字をキャッチ
+2023/01/16 23:31:45 route_question.go:23: 数字をキャッチ
+2023/01/16 23:31:57 route_question.go:23: 数字をキャッチ
+2023/01/16 23:32:22 route_question.go:23: 数字をキャッチ
+2023/01/16 23:33:13 route_question.go:23: 数字をキャッチ
+2023/01/16 23:42:34 route_question.go:23: 数字をキャッチ
+2023/01/16 23:43:40 route_question.go:23: 数字をキャッチ
+2023/01/16 23:45:25 route_question.go:23: 数字をキャッチ
+2023/01/17 21:32:25 route_question.go:23: 数字をキャッチ
+2023/01/17 21:33:31 route_question.go:23: 数字をキャッチ
+2023/01/17 21:36:11 route_question.go:23: 数字をキャッチ
+2023/01/17 22:24:05 route_question.go:23: 数字をキャッチ
+2023/01/17 22:27:09 route_question.go:23: 数字をキャッチ
+2023/01/17 22:27:31 route_question.go:23: 数字をキャッチ
+2023/01/17 22:29:59 route_question.go:23: 数字をキャッチ
+2023/01/17 22:30:02 route_question.go:23: 数字をキャッチ
+2023/01/17 22:30:14 route_question.go:23: 数字をキャッチ
+2023/01/17 22:37:45 route_question.go:23: 数字をキャッチ
+2023/01/17 22:38:06 route_question.go:23: 数字をキャッチ
+2023/01/17 22:40:59 route_question.go:23: 数字をキャッチ
+2023/01/17 22:41:08 route_userFavorite.go:10: 通信成功
+2023/01/17 22:41:08 route_userFavorite.go:12: 3
+2023/01/17 22:41:15 route_question.go:23: 数字をキャッチ
+2023/01/17 22:41:19 route_userFavorite.go:10: 通信成功
+2023/01/17 22:41:19 route_userFavorite.go:12: 3
+2023/01/17 22:42:06 route_question.go:23: 数字をキャッチ
+2023/01/17 22:42:18 route_question.go:23: 数字をキャッチ
+2023/01/17 22:42:22 route_userFavorite.go:10: 通信成功
+2023/01/17 22:42:22 route_userFavorite.go:12: 3
+2023/01/17 22:42:26 route_question.go:23: 数字をキャッチ
+2023/01/17 22:42:30 route_userFavorite.go:10: 通信成功
+2023/01/17 22:42:30 route_userFavorite.go:12: 4
+2023/01/17 22:51:17 route_question.go:23: 数字をキャッチ
+2023/01/17 23:08:44 route_question.go:23: 数字をキャッチ
+2023/01/18 13:38:50 route_question.go:23: 数字をキャッチ
+2023/01/18 13:38:56 route_userFavorite.go:13: code=400, message=json: Unmarshal(non-pointer models.UserFav)
+2023/01/18 13:41:06 route_question.go:23: 数字をキャッチ
+2023/01/18 13:41:12 route_userFavorite.go:13: code=400, message=json: Unmarshal(non-pointer models.UserFav)
+2023/01/18 13:43:58 route_question.go:23: 数字をキャッチ
+2023/01/18 13:44:05 users_favorite.go:25: sql: no rows in result set
+2023/01/18 13:47:57 route_question.go:23: 数字をキャッチ
+2023/01/18 13:48:02 users_favorite.go:25: sql: no rows in result set
+2023/01/18 13:48:02 route_userFavorite.go:17: sql: no rows in result set
+2023/01/18 15:51:53 route_question.go:23: 数字をキャッチ
+2023/01/18 15:52:00 users_favorite.go:25: sql: no rows in result set
+2023/01/18 16:10:26 route_question.go:23: 数字をキャッチ
+2023/01/18 16:10:31 users_favorite.go:26: レコードが見つかりませんでした
+2023/01/18 16:10:31 route_userFavorite.go:17: sql: no rows in result set
+2023/01/18 16:13:28 route_question.go:23: 数字をキャッチ
+2023/01/18 16:13:33 users_favorite.go:26: レコードが見つかりませんでした
+2023/01/18 16:13:33 route_userFavorite.go:17: sql: no rows in result set
+2023/01/18 16:13:33 users_favorite.go:35: postします
+2023/01/18 16:38:13 route_question.go:23: 数字をキャッチ
+2023/01/18 16:38:17 users_favorite.go:26: レコードが見つかりませんでした
+2023/01/18 16:38:17 route_userFavorite.go:17: sql: no rows in result set
+2023/01/18 16:38:17 users_favorite.go:38: near "VALUE": syntax error
+2023/01/18 16:39:14 route_question.go:23: 数字をキャッチ
+2023/01/18 16:39:21 users_favorite.go:26: レコードが見つかりませんでした
+2023/01/18 16:39:21 route_userFavorite.go:17: sql: no rows in result set
+2023/01/18 16:42:43 route_question.go:23: 数字をキャッチ
+2023/01/18 16:42:48 route_userFavorite.go:15: 0
+2023/01/18 16:42:48 route_userFavorite.go:15: 0
+2023/01/18 16:42:48 route_userFavorite.go:15: 0
+2023/01/18 16:44:26 route_question.go:23: 数字をキャッチ
+2023/01/18 16:44:30 route_userFavorite.go:15: 0
+2023/01/18 16:44:30 route_userFavorite.go:16: 4
+2023/01/18 16:44:30 users_favorite.go:26: レコードが見つかりませんでした
+2023/01/18 16:44:30 route_userFavorite.go:19: sql: no rows in result set
+2023/01/18 16:44:30 users_favorite.go:40: post成功
+2023/01/18 16:51:08 route_auth.go:36: 0
+2023/01/18 16:53:59 route_auth.go:36: 2
+2023/01/18 17:12:10 route_question.go:23: 数字をキャッチ
+2023/01/18 17:12:15 route_userFavorite.go:14: code=400, message=Unmarshal type error: expected=int, got=object, field=user_id, offset=12
+2023/01/18 17:19:20 route_question.go:23: 数字をキャッチ
+2023/01/18 17:19:27 route_userFavorite.go:14: code=400, message=Unmarshal type error: expected=int, got=object, field=user_id, offset=12
+2023/01/18 17:21:44 route_question.go:23: 数字をキャッチ
+2023/01/18 17:21:56 users_favorite.go:26: レコードが見つかりませんでした
+2023/01/18 17:21:56 route_userFavorite.go:18: sql: no rows in result set
+2023/01/18 17:21:56 users_favorite.go:40: post成功
+2023/01/18 17:22:24 route_question.go:23: 数字をキャッチ
+2023/01/18 17:22:30 route_question.go:23: 数字をキャッチ
+2023/01/18 17:22:37 users_favorite.go:26: レコードが見つかりませんでした
+2023/01/18 17:22:37 route_userFavorite.go:18: sql: no rows in result set
+2023/01/18 17:22:37 users_favorite.go:40: post成功
+2023/01/18 17:22:43 route_question.go:23: 数字をキャッチ
+2023/01/18 17:23:03 route_question.go:23: 数字をキャッチ
+2023/01/18 17:23:07 users_favorite.go:26: レコードが見つかりませんでした
+2023/01/18 17:23:07 route_userFavorite.go:18: sql: no rows in result set
+2023/01/18 17:23:07 users_favorite.go:40: post成功
+2023/01/18 17:25:05 route_question.go:23: 数字をキャッチ
+2023/01/18 17:25:09 users_favorite.go:26: レコードが見つかりませんでした
+2023/01/18 17:25:09 route_userFavorite.go:18: sql: no rows in result set
+2023/01/18 17:25:09 users_favorite.go:40: post成功
+2023/01/18 17:30:14 route_question.go:23: 数字をキャッチ
+2023/01/18 17:30:20 users_favorite.go:26: レコードが見つかりませんでした
+2023/01/18 17:30:20 route_userFavorite.go:18: sql: no rows in result set
+2023/01/18 17:30:20 users_favorite.go:40: &{0 0 0  0001-01-01 00:00:00 +0000 UTC}
+2023/01/18 17:35:39 route_question.go:23: 数字をキャッチ
+2023/01/18 17:35:49 users_favorite.go:26: レコードが見つかりませんでした
+2023/01/18 17:35:49 route_userFavorite.go:18: sql: no rows in result set
+2023/01/18 17:35:49 users_favorite.go:40: &{0 0 0  0001-01-01 00:00:00 +0000 UTC}
+2023/01/18 17:38:53 route_question.go:23: 数字をキャッチ
+2023/01/18 17:39:08 users_favorite.go:49: put成功
+2023/01/18 17:39:37 route_question.go:23: 数字をキャッチ
+2023/01/18 17:39:42 users_favorite.go:26: レコードが見つかりませんでした
+2023/01/18 17:39:42 route_userFavorite.go:18: sql: no rows in result set
+2023/01/18 17:39:42 users_favorite.go:40: &{0 0 0  0001-01-01 00:00:00 +0000 UTC}
+2023/01/18 17:49:31 route_question.go:23: 数字をキャッチ
+2023/01/18 17:49:42 route_userFavorite.go:16: 2
+2023/01/18 17:49:42 route_userFavorite.go:17: 3
+2023/01/18 17:49:42 users_favorite.go:26: 支持する議員を登録していません
+2023/01/18 17:49:42 route_userFavorite.go:20: sql: no rows in result set
+2023/01/18 17:49:42 users_favorite.go:40: 新規に支持する議員を登録しました
+2023/01/18 17:50:11 route_question.go:23: 数字をキャッチ
+2023/01/18 17:50:15 route_userFavorite.go:16: 2
+2023/01/18 17:50:15 route_userFavorite.go:17: 4
+2023/01/18 17:50:15 users_favorite.go:26: 支持する議員を登録していません
+2023/01/18 17:50:15 route_userFavorite.go:20: sql: no rows in result set
+2023/01/18 17:50:15 users_favorite.go:40: 新規に支持する議員を登録しました
+2023/01/18 20:43:56 route_question.go:23: 数字をキャッチ
+2023/01/18 20:44:04 route_userFavorite.go:16: 2
+2023/01/18 20:44:04 route_userFavorite.go:17: 3
+2023/01/18 20:44:04 users_favorite.go:26: 支持する議員を登録していません
+2023/01/18 20:44:04 route_userFavorite.go:20: sql: no rows in result set
+2023/01/18 20:44:04 users_favorite.go:51: 新規に支持する議員を登録しました
+2023/01/18 20:44:51 route_question.go:23: 数字をキャッチ
+2023/01/18 20:44:58 route_userFavorite.go:16: 2
+2023/01/18 20:44:58 route_userFavorite.go:17: 4
+2023/01/18 20:44:58 users_favorite.go:29: ユーザIDに紐づく支持する議員がいるか確認
+2023/01/18 20:44:58 users_favorite.go:70: 支持する議員を更新しました
+2023/01/18 22:58:27 users_favorite.go:26: 支持する議員を登録していません
+2023/01/18 22:58:27 route_auth.go:38: sql: no rows in result set
+2023/01/18 23:00:40 users_favorite.go:26: 支持する議員を登録していません
+2023/01/18 23:00:40 route_auth.go:38: sql: no rows in result set
+2023/01/18 23:05:14 users_favorite.go:29: ユーザIDに紐づく支持する議員がいるか確認
+2023/01/18 23:11:45 route_question.go:23: 数字をキャッチ
+2023/01/18 23:11:51 route_userFavorite.go:14: code=400, message=Unmarshal type error: expected=int, got=object, field=user_id, offset=12
+2023/01/18 23:17:56 route_question.go:23: 数字をキャッチ
+2023/01/18 23:18:03 route_userFavorite.go:14: code=400, message=Unmarshal type error: expected=int, got=object, field=user_id, offset=12
+2023/01/18 23:18:54 route_question.go:23: 数字をキャッチ
+2023/01/18 23:19:00 route_userFavorite.go:14: &{0 0 2  0001-01-01 00:00:00 +0000 UTC}
+2023/01/18 23:19:00 route_userFavorite.go:15: code=400, message=Unmarshal type error: expected=int, got=object, field=user_id, offset=12
+2023/01/18 23:20:08 route_question.go:23: 数字をキャッチ
+2023/01/18 23:20:13 route_userFavorite.go:14: &{0 0 5  0001-01-01 00:00:00 +0000 UTC}
+2023/01/18 23:20:13 route_userFavorite.go:15: code=400, message=Unmarshal type error: expected=int, got=object, field=user_id, offset=12
+2023/01/18 23:20:53 route_question.go:23: 数字をキャッチ
+2023/01/18 23:20:57 route_userFavorite.go:14: 0
+2023/01/18 23:20:57 route_userFavorite.go:15: 3
+2023/01/18 23:20:57 route_userFavorite.go:16: code=400, message=Unmarshal type error: expected=int, got=object, field=user_id, offset=12
+2023/01/18 23:27:19 route_question.go:23: 数字をキャッチ
+2023/01/18 23:27:24 users_favorite.go:27: 支持する議員を登録していません
+2023/01/18 23:27:24 route_userFavorite.go:20: sql: no rows in result set
+2023/01/18 23:27:24 users_favorite.go:52: 新規に支持する議員を登録しました
+2023/01/18 23:27:38 users_favorite.go:30: ユーザIDに紐づく支持する議員がいるか確認
+2023/01/18 23:27:42 route_question.go:23: 数字をキャッチ
+2023/01/18 23:27:46 route_userFavorite.go:14: 0
+2023/01/18 23:27:46 route_userFavorite.go:15: 3
+2023/01/18 23:27:46 route_userFavorite.go:16: code=400, message=Unmarshal type error: expected=int, got=object, field=user_id, offset=12
+2023/01/18 23:32:04 route_question.go:23: 数字をキャッチ
+2023/01/18 23:32:11 users_favorite.go:30: ユーザIDに紐づく支持する議員がいるか確認
+2023/01/18 23:32:15 users_favorite.go:30: ユーザIDに紐づく支持する議員がいるか確認
+2023/01/18 23:32:32 route_question.go:23: 数字をキャッチ
+2023/01/18 23:32:37 route_userFavorite.go:14: 0
+2023/01/18 23:32:37 route_userFavorite.go:15: 2
+2023/01/18 23:32:37 route_userFavorite.go:16: code=400, message=Unmarshal type error: expected=int, got=object, field=user_id, offset=12
+2023/01/18 23:35:28 route_question.go:23: 数字をキャッチ
+2023/01/18 23:35:31 users_favorite.go:30: ユーザIDに紐づく支持する議員がいるか確認
+2023/01/18 23:35:31 users_favorite.go:71: 支持する議員を更新しました
+2023/01/18 23:35:36 users_favorite.go:30: ユーザIDに紐づく支持する議員がいるか確認
+2023/01/18 23:36:07 route_question.go:23: 数字をキャッチ
+2023/01/18 23:36:11 users_favorite.go:30: ユーザIDに紐づく支持する議員がいるか確認
+2023/01/18 23:36:11 users_favorite.go:71: 支持する議員を更新しました
+2023/01/18 23:36:27 route_question.go:23: 数字をキャッチ

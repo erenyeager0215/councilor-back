@@ -1,6 +1,8 @@
 package main
 
-import "myapp/app/controllers"
+import (
+	"myapp/app/controllers"
+)
 
 func main() {
 	// fmt.Println(models.Db)
@@ -29,8 +31,8 @@ func main() {
 // 	fmt.Println(v)	
 
 // user:= new(models.User)
-// user.NickName= "test2"
-// user.PassWord="1"
+// user.NickName= "test"
+// user.PassWord="a"
 // user.CreateUser()
 	
 	// fmt.Println(models.Encrypt("1"))

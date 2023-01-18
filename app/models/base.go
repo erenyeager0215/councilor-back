@@ -7,6 +7,7 @@ import (
 	"log"
 	"myapp/config"
 
+	"github.com/google/uuid"
 	_ "github.com/mattn/go-sqlite3"
 )
 
@@ -19,6 +20,8 @@ const(
 	tableNameCouncilor= "councilors"
 	tableNameQuestion= "questions"
 	tableNameTest= "test_table"
+	tableNameSession= "session"
+	tableNameFavorite= "favorite"
 )
 
 func init(){
@@ -29,10 +32,11 @@ func init(){
 
 	cmdU:= fmt.Sprintf(`CREATE TABLE IF NOT EXISTS %s(
 		id INTEGER PRIMARY KEY AUTOINCREMENT,
+		uuid STRING,
 		nickname STRING NOT NULL UNIQUE,
 		password STRING NOT NULL,
-		created_at DATETIME,
-		age STRING)`,tabelNameUser)
+		created_at DATETIME
+		)`,tabelNameUser)
 
 	_,err = Db.Exec(cmdU)
 	if err != nil{
@@ -86,6 +90,35 @@ func init(){
 		if err != nil{
 			log.Fatalln(err)
 		}
+
+		cmdS:= fmt.Sprintf(`CREATE TABLE IF NOT EXISTS %s(
+			id INTEGER PRIMARY KEY AUTOINCREMENT,
+			uuid STRING NOT NULL UNIQUE,
+			nickname STRING,
+			user_id INTEGER,
+			created_at DATETIME)`,tableNameSession)
+	
+		_,err = Db.Exec(cmdS)
+		if err != nil{
+			log.Fatalln(err)
+		}
+
+		cmdF:= fmt.Sprintf(`CREATE TABLE IF NOT EXISTS %s(
+			id INTEGER PRIMARY KEY AUTOINCREMENT,
+			user_id INTEGER,
+			councilor_id INTEGER,
+			category STRING,
+			created_at DATETIME)`,tableNameFavorite)
+	
+		_,err = Db.Exec(cmdF)
+		if err != nil{
+			log.Fatalln(err)
+		}
+}
+
+func createUUID() (uuidobj uuid.UUID) {
+	uuidobj, _ = uuid.NewUUID()
+	return uuidobj
 }
 
 func Encrypt(plaintext string)(cryptext string){
