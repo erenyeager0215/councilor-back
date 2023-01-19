@@ -17,7 +17,7 @@ func login(c echo.Context) error {
 
 	user, err := models.GetUser(u)
 	if err != nil {
-		log.Fatalln(err)
+		log.Println(err)
 	}
 	
 	if models.Encrypt(u.PassWord) == user.PassWord {

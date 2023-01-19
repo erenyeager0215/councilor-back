@@ -11,27 +11,40 @@ import (
 func registerUsersFavoriteCouncilor(c echo.Context)error{
 	uf:= new(models.UserFav)
 	if err:= c.Bind(uf); err !=nil{
-		log.Println(uf.User_id)
-		log.Println(uf.Councilor_id)
 		log.Fatalln(err)
 	}
+
+	// レスポンス用の構造体へ格納
+	responseUser:= &models.ResponseUser{}
+
 	user_fav,err:=models.GetFavoriteCouncilorByUserId(uf.User_id)
+	log.Println(uf.User_id)
+	log.Println(uf.Councilor_id)
+
+	// もし、ユーザが支持する議員がいない場合新規で支持者を登録する
 	if err !=nil{
 		log.Println(err)
-		// もし、ユーザが支持する議員がいない場合新規で支持者を登録する
-		ufFromPost,err:=uf.PostFavoriteCouncilor()
+		user_newfav,err:=uf.PostFavoriteCouncilor()
 		if err!=nil{
 			log.Println(err)
 		}
-		return c.JSON(http.StatusCreated,ufFromPost)	
+		responseUser.UserID=user_newfav.User_id
+		responseUser.Favorite=user_newfav
+		return c.JSON(http.StatusCreated,responseUser)	
 	}
-	if user_fav.Councilor_id != uf.Councilor_id{
-		// もし、ユーザが支持する議員が以前の議員から変更があった場合、議員情報を更新する。
-		ufFromPut,err:=uf.PutFavoriteCouncilor()
+
+	// もし、ユーザが支持する議員が以前の議員から変更があった場合、議員情報を更新する。
+	if user_fav.Councilor_id != uf.Councilor_id{		
+		user_newfav,err:=uf.PutFavoriteCouncilor()
 		if err!=nil{
 			log.Println(err)
 		}
-		return c.JSON(http.StatusCreated,ufFromPut)
+		responseUser.UserID=user_newfav.User_id
+		responseUser.Favorite=user_newfav
+		return c.JSON(http.StatusCreated,responseUser)
 	} 
-	return c.JSON(http.StatusCreated,user_fav)
+
+	responseUser.UserID=user_fav.User_id
+	responseUser.Favorite=user_fav
+	return c.JSON(http.StatusCreated,responseUser)
 }

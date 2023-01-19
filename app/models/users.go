@@ -57,7 +57,7 @@ func GetUser(u *User)(user User,err error){
 			&user.PassWord,
 		)
 		if err != nil {
-			log.Fatal(err)
+			log.Println(err)
 		}
 		return user,err
 }
