@@ -7,8 +7,8 @@ import (
 	"log"
 	"myapp/config"
 
+	_ "github.com/go-sql-driver/mysql"
 	"github.com/google/uuid"
-	_ "github.com/mattn/go-sqlite3"
 )
 
 var Db *sql.DB
@@ -25,16 +25,19 @@ const(
 )
 
 func init(){
-	Db,err = sql.Open(config.Config.SQLDriver,config.Config.DbName)
+	db_auth := fmt.Sprintf("%v:%v@(%v)/%v", config.Config.DbUser,config.Config.DbPass,config.Config.DbPort,config.Config.DbName)
+	Db,err = sql.Open(config.Config.SQLDriver,db_auth)
+	// Db,err = sql.Open(config.Config.SQLDriver,config.Config.DbName)
 	if err != nil{
 		log.Fatalln(err)
 	}
 
 	cmdU:= fmt.Sprintf(`CREATE TABLE IF NOT EXISTS %s(
-		id INTEGER PRIMARY KEY AUTOINCREMENT,
-		uuid STRING,
-		nickname STRING NOT NULL UNIQUE,
-		password STRING NOT NULL,
+		id INT AUTO_INCREMENT PRIMARY KEY,
+		uuid VARCHAR(255),
+		nickname VARCHAR(100) NOT NULL UNIQUE,
+		password VARCHAR(255) NOT NULL,
+		birthday DATE,
 		created_at DATETIME
 		)`,tabelNameUser)
 
@@ -44,13 +47,14 @@ func init(){
 	}
 
 	cmdC:= fmt.Sprintf(`CREATE TABLE IF NOT EXISTS %s(
-		id INTEGER PRIMARY KEY AUTOINCREMENT,
-		name STRING,
-		commitee STRING,
-		imagepath STRING,
-		address STRING,
-		tel_num STRING,
+		id INT AUTO_INCREMENT PRIMARY KEY,
+		name VARCHAR(20),
+		commitee VARCHAR(15),
+		imagepath VARCHAR(30),
+		address VARCHAR(20),
+		tel_num VARCHAR(30),
 		birthday DATETIME,
+		homepage VARCHAR(50),
 		created_at DATETIME)`,tableNameCouncilor)
 
 		_,err = Db.Exec(cmdC)
@@ -60,12 +64,12 @@ func init(){
 		}
 	
 		cmdQ := fmt.Sprintf(`CREATE TABLE IF NOT EXISTS %s(
-			id INTEGER PRIMARY KEY AUTOINCREMENT,
-			overview STRING,
-			category STRING,
+			id INT AUTO_INCREMENT PRIMARY KEY,
+			overview TEXT,
+			category VARCHAR(255),
 			content TEXT,
 			answer TEXT,
-			held_time STRING,
+			held_time VARCHAR(255),
 			councilor_id INTEGER,
 			created_at DATETIME)`, tableNameQuestion)
 	
@@ -76,14 +80,14 @@ func init(){
 		}
 
 		cmdT:= fmt.Sprintf(`CREATE TABLE IF NOT EXISTS %s(
-			id INTEGER PRIMARY KEY AUTOINCREMENT,
-			name STRING,
-			commitee STRING,
-			image STRING,
-			address STRING,
-			contact STRING,
+			id INT AUTO_INCREMENT PRIMARY KEY,
+			name VARCHAR(255),
+			commitee VARCHAR(255),
+			image VARCHAR(255),
+			address VARCHAR(255),
+			contact VARCHAR(255),
 			birthday DATETIME,
-			url STRING,
+			url TEXT,
 			created_at DATETIME)`,tableNameTest)
 	
 		_,err = Db.Exec(cmdT)
@@ -92,9 +96,9 @@ func init(){
 		}
 
 		cmdS:= fmt.Sprintf(`CREATE TABLE IF NOT EXISTS %s(
-			id INTEGER PRIMARY KEY AUTOINCREMENT,
-			uuid STRING NOT NULL UNIQUE,
-			nickname STRING,
+			id INT AUTO_INCREMENT PRIMARY KEY,
+			uuid VARCHAR(255) NOT NULL UNIQUE,
+			nickname VARCHAR(255),
 			user_id INTEGER,
 			created_at DATETIME)`,tableNameSession)
 	
@@ -104,10 +108,10 @@ func init(){
 		}
 
 		cmdF:= fmt.Sprintf(`CREATE TABLE IF NOT EXISTS %s(
-			id INTEGER PRIMARY KEY AUTOINCREMENT,
+			id INT AUTO_INCREMENT PRIMARY KEY,
 			user_id INTEGER,
 			councilor_id INTEGER,
-			category STRING,
+			category TEXT,
 			created_at DATETIME)`,tableNameFavorite)
 	
 		_,err = Db.Exec(cmdF)

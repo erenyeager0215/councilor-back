@@ -1,12 +1,13 @@
 package main
 
 import (
-	"myapp/app/controllers"
+	"fmt"
+	"myapp/app/models"
 )
 
 func main() {
-	// fmt.Println(models.Db)
- controllers.StartMainServer()
+	fmt.Println(models.Db)
+//  controllers.StartMainServer()
 
 
 // cmd:= `INSERT INTO questions(

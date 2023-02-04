@@ -514,3 +514,103 @@
 2023/01/19 17:41:18 users_favorite.go:27: 支持する議員を登録していません
 2023/01/19 17:41:18 route_auth.go:39: sql: no rows in result set
 2023/01/19 23:35:37 route_question.go:23: 数字をキャッチ
+2023/01/19 23:51:52 route_question.go:23: 数字をキャッチ
+2023/01/19 23:53:50 route_question.go:23: 数字をキャッチ
+2023/01/19 23:57:17 route_question.go:23: 数字をキャッチ
+2023/01/19 23:57:27 route_question.go:23: 数字をキャッチ
+2023/01/19 23:57:36 users_favorite.go:27: 支持する議員を登録していません
+2023/01/19 23:57:36 route_userFavorite.go:21: 0
+2023/01/19 23:57:36 route_userFavorite.go:22: 4
+2023/01/19 23:57:36 route_userFavorite.go:26: sql: no rows in result set
+2023/01/19 23:57:36 users_favorite.go:52: 新規に支持する議員を登録しました
+2023/01/19 23:57:41 users_favorite.go:27: 支持する議員を登録していません
+2023/01/19 23:57:41 route_auth.go:39: sql: no rows in result set
+2023/01/19 23:57:55 route_question.go:23: 数字をキャッチ
+2023/01/19 23:58:04 users_favorite.go:27: 支持する議員を登録していません
+2023/01/19 23:58:04 route_userFavorite.go:21: 2
+2023/01/19 23:58:04 route_userFavorite.go:22: 4
+2023/01/19 23:58:04 route_userFavorite.go:26: sql: no rows in result set
+2023/01/19 23:58:04 users_favorite.go:52: 新規に支持する議員を登録しました
+2023/01/19 23:58:51 route_question.go:23: 数字をキャッチ
+2023/01/19 23:58:57 users_favorite.go:30: ユーザIDに紐づく支持する議員がいるか確認
+2023/01/19 23:58:57 route_userFavorite.go:21: 2
+2023/01/19 23:58:57 route_userFavorite.go:22: 3
+2023/01/19 23:58:57 users_favorite.go:71: 支持する議員を更新しました
+2023/01/20 00:01:57 route_question.go:23: 数字をキャッチ
+2023/01/20 00:01:58 route_question.go:23: 数字をキャッチ
+2023/01/20 00:02:14 users_favorite.go:30: ユーザIDに紐づく支持する議員がいるか確認
+2023/01/20 00:02:14 route_userFavorite.go:21: 0
+2023/01/20 00:02:14 route_userFavorite.go:22: 3
+2023/01/20 00:02:14 users_favorite.go:71: 支持する議員を更新しました
+2023/01/20 00:02:20 users_favorite.go:30: ユーザIDに紐づく支持する議員がいるか確認
+2023/01/20 00:02:24 route_question.go:23: 数字をキャッチ
+2023/01/20 00:02:28 users_favorite.go:30: ユーザIDに紐づく支持する議員がいるか確認
+2023/01/20 00:02:28 route_userFavorite.go:21: 2
+2023/01/20 00:02:28 route_userFavorite.go:22: 5
+2023/01/20 00:02:28 users_favorite.go:71: 支持する議員を更新しました
+2023/01/20 00:03:03 route_question.go:23: 数字をキャッチ
+2023/01/20 00:03:04 route_question.go:23: 数字をキャッチ
+2023/01/20 00:06:47 route_question.go:23: 数字をキャッチ
+2023/01/20 00:06:47 route_question.go:23: 数字をキャッチ
+2023/01/20 00:07:04 route_question.go:23: 数字をキャッチ
+2023/01/20 00:07:05 route_question.go:23: 数字をキャッチ
+2023/01/20 00:08:17 route_question.go:23: 数字をキャッチ
+2023/01/20 00:08:21 route_question.go:23: 数字をキャッチ
+2023/01/20 00:09:11 route_question.go:23: 数字をキャッチ
+2023/01/20 00:09:13 route_question.go:23: 数字をキャッチ
+2023/01/20 00:09:19 users_favorite.go:30: ユーザIDに紐づく支持する議員がいるか確認
+2023/01/20 00:09:19 route_userFavorite.go:21: 0
+2023/01/20 00:09:19 route_userFavorite.go:22: 4
+2023/01/20 00:09:19 users_favorite.go:71: 支持する議員を更新しました
+2023/01/20 00:09:24 users_favorite.go:30: ユーザIDに紐づく支持する議員がいるか確認
+2023/01/20 00:09:50 route_question.go:23: 数字をキャッチ
+2023/01/20 00:09:55 users_favorite.go:30: ユーザIDに紐づく支持する議員がいるか確認
+2023/01/20 00:09:55 route_userFavorite.go:21: 2
+2023/01/20 00:09:55 route_userFavorite.go:22: 3
+2023/01/20 00:09:55 users_favorite.go:71: 支持する議員を更新しました
+2023/01/20 00:10:26 route_question.go:23: 数字をキャッチ
+2023/01/20 00:10:27 route_question.go:23: 数字をキャッチ
+2023/01/20 00:10:57 route_question.go:23: 数字をキャッチ
+2023/01/20 00:10:58 route_question.go:23: 数字をキャッチ
+2023/01/20 00:11:34 route_question.go:23: 数字をキャッチ
+2023/01/20 00:11:34 route_question.go:23: 数字をキャッチ
+2023/01/20 00:11:44 users_favorite.go:30: ユーザIDに紐づく支持する議員がいるか確認
+2023/01/20 00:11:44 route_userFavorite.go:21: 0
+2023/01/20 00:11:44 route_userFavorite.go:22: 3
+2023/01/20 00:11:44 users_favorite.go:71: 支持する議員を更新しました
+2023/01/20 00:11:49 users_favorite.go:30: ユーザIDに紐づく支持する議員がいるか確認
+2023/01/20 00:11:57 route_question.go:23: 数字をキャッチ
+2023/01/20 00:12:00 users_favorite.go:30: ユーザIDに紐づく支持する議員がいるか確認
+2023/01/20 00:12:00 route_userFavorite.go:21: 2
+2023/01/20 00:12:00 route_userFavorite.go:22: 5
+2023/01/20 00:12:00 users_favorite.go:71: 支持する議員を更新しました
+2023/01/20 00:13:51 route_question.go:23: 数字をキャッチ
+2023/01/20 00:13:51 route_question.go:23: 数字をキャッチ
+2023/01/20 00:13:58 users_favorite.go:30: ユーザIDに紐づく支持する議員がいるか確認
+2023/01/20 00:13:58 route_userFavorite.go:21: 0
+2023/01/20 00:13:58 route_userFavorite.go:22: 5
+2023/01/20 00:13:58 users_favorite.go:71: 支持する議員を更新しました
+2023/01/20 00:14:03 users_favorite.go:30: ユーザIDに紐づく支持する議員がいるか確認
+2023/01/20 00:14:10 route_question.go:23: 数字をキャッチ
+2023/01/20 00:14:14 users_favorite.go:30: ユーザIDに紐づく支持する議員がいるか確認
+2023/01/20 00:14:14 route_userFavorite.go:21: 2
+2023/01/20 00:14:14 route_userFavorite.go:22: 3
+2023/01/20 00:14:14 users_favorite.go:71: 支持する議員を更新しました
+2023/01/20 00:15:03 route_question.go:23: 数字をキャッチ
+2023/01/20 00:15:03 route_question.go:23: 数字をキャッチ
+2023/01/20 00:16:11 route_question.go:23: 数字をキャッチ
+2023/01/20 00:16:20 route_question.go:23: 数字をキャッチ
+2023/01/21 14:37:34 route_auth.go:59: &{0  testtest b 0001-01-01 00:00:00 +0000 UTC}
+2023/01/21 14:38:09 route_auth.go:59: &{0  testtest b 0001-01-01 00:00:00 +0000 UTC}
+2023/01/21 14:38:09 users.go:44: UNIQUE constraint failed: users.nickname
+2023/01/22 14:28:37 base.go:46: unable to open database file: The filename, directory name, or volume label syntax is incorrect.
+2023/01/22 14:38:49 base.go:46: unable to open database file: The filename, directory name, or volume label syntax is incorrect.
+2023/01/22 14:46:15 base.go:46: unable to open database file: The filename, directory name, or volume label syntax is incorrect.
+2023/01/22 14:47:30 base.go:46: unable to open database file: The filename, directory name, or volume label syntax is incorrect.
+2023/01/22 14:48:58 base.go:46: unable to open database file: The filename, directory name, or volume label syntax is incorrect.
+2023/01/22 15:09:10 base.go:46: unable to open database file: The filename, directory name, or volume label syntax is incorrect.
+2023/01/22 15:10:34 base.go:46: unable to open database file: The filename, directory name, or volume label syntax is incorrect.
+2023/01/22 15:16:44 base.go:32: sql: unknown driver "mysql" (forgotten import?)
+2023/01/22 15:18:01 base.go:106: Error 1170 (42000): BLOB/TEXT column 'uuid' used in key specification without a key length
+2023/02/04 22:16:58 base.go:63: Error 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'created_at DATETIME)' at line 10
+2023/02/04 22:17:05 base.go:63: Error 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'created_at DATETIME)' at line 10
