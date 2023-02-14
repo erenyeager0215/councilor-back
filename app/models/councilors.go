@@ -5,68 +5,63 @@ import (
 	"time"
 )
 
-
-
 type Councilor struct {
-	Id        int    `json:"id"`
-	Name      string `json:"name"`
-	Commitee  string `json:"commitee"`
-	Image string `json:"image"`
+	Id        int       `json:"id"`
+	Name      string    `json:"name"`
+	Commitee  string    `json:"commitee"`
+	ImagePath string    `json:"imagepath"`
 	Birthday  time.Time `json:"birthday"`
-	Adress    string `json:"address"`
-	Contact    string `json:"contact"`
-	Url string `json:"url"`
+	Adress    string    `json:"address"`
+	Contact   string    `json:"contact"`
+	Url       string    `json:"url"`
+	Active    bool      `json:"-"`
 	CreatedAt time.Time `json:"-"`
 	// Questions []Question
 }
 
-
-
-func GetCouncilor(id int)(Councilor ,error){
+func GetCouncilor(id int) (Councilor, error) {
 	var c Councilor
-	cmd:= "SELECT id,name,commitee,image,birthday,address,contact,url FROM test_table WHERE id = ?"
-	err = Db.QueryRow(cmd,id).Scan(
+	cmd := "SELECT id,name,commitee,imagepath,birthday,address,contact,url FROM councilors WHERE id = ?"
+	err = Db.QueryRow(cmd, id).Scan(
 		&c.Id,
 		&c.Name,
 		&c.Commitee,
-		&c.Image,
+		&c.ImagePath,
 		&c.Birthday,
 		&c.Adress,
-		&c.Contact,	 
+		&c.Contact,
 		&c.Url,
-	)	
-	if err != nil{
+	)
+	if err != nil {
 		log.Fatal(err)
 	}
-	return c,err
+	return c, err
 }
 
-
-
-func GetCouncilorList()(councilors []Councilor,err error){
-	cmd:= "SELECT id,name,commitee,image,birthday,address,contact,url FROM test_table"
-	rows,err := Db.Query(cmd)
-	if err != nil{
-		log.Fatalln(err)		
+func GetCouncilorList() (councilors []Councilor, err error) {
+	cmd := "SELECT id,name,commitee,imagepath,address,contact,birthday,url FROM councilors"
+	rows, err := Db.Query(cmd)
+	if err != nil {
+		log.Fatalln(err)
 	}
-	for rows.Next(){
-		var c Councilor 
-		err= rows.Scan(
+	for rows.Next() {
+		var c Councilor
+		err = rows.Scan(
 			&c.Id,
 			&c.Name,
 			&c.Commitee,
-			&c.Image,
-			&c.Birthday,
+			&c.ImagePath,
 			&c.Adress,
 			&c.Contact,
+			&c.Birthday,
 			&c.Url,
 		)
-		if err != nil{
+		if err != nil {
 			log.Fatalln(err)
 		}
-		councilors = append(councilors,c)
+		councilors = append(councilors, c)
 	}
 	rows.Close()
 
-	return councilors,err
+	return councilors, err
 }

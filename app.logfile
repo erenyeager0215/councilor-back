@@ -614,3 +614,30 @@
 2023/01/22 15:18:01 base.go:106: Error 1170 (42000): BLOB/TEXT column 'uuid' used in key specification without a key length
 2023/02/04 22:16:58 base.go:63: Error 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'created_at DATETIME)' at line 10
 2023/02/04 22:17:05 base.go:63: Error 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'created_at DATETIME)' at line 10
+2023/02/12 22:11:53 councilors.go:35: sql: no rows in result set
+2023/02/12 22:13:03 councilors.go:44: Error 1054 (42S22): Unknown column 'image' in 'field list'
+2023/02/12 22:24:24 councilors.go:59: sql: Scan error on column index 6, name "birthday": unsupported Scan, storing driver.Value type []uint8 into type *time.Time
+2023/02/12 22:34:25 councilors.go:59: sql: Scan error on column index 6, name "birthday": unsupported Scan, storing driver.Value type []uint8 into type *time.Time
+2023/02/12 22:40:50 base.go:45: Error 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '?parseTime=true' at line 1
+2023/02/12 22:42:23 base.go:31: invalid bool value: true?charset=utf8mb4
+2023/02/12 23:04:33 base.go:45: dial tcp [::1]:3307: connectex: No connection could be made because the target machine actively refused it.
+2023/02/12 23:05:07 councilors.go:44: Error 1054 (42S22): Unknown column 'contact' in 'field list'
+2023/02/13 22:58:11 base.go:45: dial tcp [::1]:3307: connectex: No connection could be made because the target machine actively refused it.
+2023/02/14 21:20:01 base.go:45: dial tcp [::1]:3307: connectex: No connection could be made because the target machine actively refused it.
+2023/02/14 21:33:38 councilors.go:35: Error 1146 (42S02): Table 'webapp.test_table' doesn't exist
+2023/02/14 21:39:57 councilors.go:35: Error 1054 (42S22): Unknown column 'image' in 'field list'
+2023/02/14 21:45:13 route_question.go:23: 数字をキャッチ
+2023/02/14 21:45:40 route_question.go:23: 数字をキャッチ
+2023/02/14 23:28:49 route_question.go:23: 数字をキャッチ
+2023/02/14 23:31:00 route_question.go:23: 数字をキャッチ
+2023/02/14 23:38:13 route_question.go:23: 数字をキャッチ
+2023/02/14 23:39:41 route_question.go:23: 数字をキャッチ
+2023/02/14 23:40:34 route_question.go:23: 数字をキャッチ
+2023/02/14 23:54:04 route_question.go:16: 文字列をキャッチ
+2023/02/14 23:54:13 route_question.go:23: 数字をキャッチ
+2023/02/14 23:54:49 route_question.go:23: 数字をキャッチ
+2023/02/14 23:55:02 users_favorite.go:27: 支持する議員を登録していません
+2023/02/14 23:55:02 route_userFavorite.go:21: 0
+2023/02/14 23:55:02 route_userFavorite.go:22: 1
+2023/02/14 23:55:02 route_userFavorite.go:26: sql: no rows in result set
+2023/02/14 23:55:03 users_favorite.go:52: 新規に支持する議員を登録しました
