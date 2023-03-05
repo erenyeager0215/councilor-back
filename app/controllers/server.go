@@ -39,7 +39,7 @@ func StartMainServer() {
 	})
 	e.GET("/councilor/:id", getCouncilor)
 	e.GET("/councilors", getCouncilors)
-
+	e.GET("/councilors/ranking", getRankingOfCouncilors)
 	e.GET("/category", getCategory)
 	e.GET("/questions/:id", getQuestionsByCouncilorId)
 

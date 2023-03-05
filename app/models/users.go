@@ -46,6 +46,7 @@ func (u *User) CreateUser() (err error) {
 	return err
 }
 
+// ニックネームに紐づくユーザ情報を取得
 func GetUser(u *User) (user User, err error) {
 	cmd := "SELECT id,nickname,password from users WHERE nickname = ?"
 	err = Db.QueryRow(cmd, u.NickName).Scan(

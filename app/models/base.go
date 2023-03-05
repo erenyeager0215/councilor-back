@@ -21,6 +21,7 @@ const (
 	tableNameQuestion  = "questions"
 	tableNameSession   = "session"
 	tableNameFavorite  = "favorite"
+	tableNameCategory  = "category"
 )
 
 func init() {
@@ -32,9 +33,9 @@ func init() {
 
 	cmdU := fmt.Sprintf(`CREATE TABLE IF NOT EXISTS %s(
 		id INT AUTO_INCREMENT PRIMARY KEY,
-		uuid VARCHAR(255),
+		uuid VARCHAR(100),
 		nickname VARCHAR(50) NOT NULL UNIQUE,
-		password VARCHAR(20) NOT NULL,
+		password VARCHAR(100) NOT NULL,
 		birthday DATE,
 		created_at DATETIME
 		)`, tabelNameUser)
@@ -98,6 +99,15 @@ func init() {
 			created_at DATETIME)`, tableNameFavorite)
 
 	_, err = Db.Exec(cmdF)
+	if err != nil {
+		log.Fatalln(err)
+	}
+
+	cmdCategory := fmt.Sprintf(`CREATE TABLE IF NOT EXISTS %s(
+			category_id INT AUTO_INCREMENT PRIMARY KEY,
+			category_name VARCHAR(30),
+			created_at DATETIME)`, tableNameCategory)
+	_, err = Db.Exec(cmdCategory)
 	if err != nil {
 		log.Fatalln(err)
 	}

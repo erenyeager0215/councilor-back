@@ -19,6 +19,11 @@ type Councilor struct {
 	// Questions []Question
 }
 
+type CouncilorsRanking struct {
+	CouncilorName string `json:"name"`
+	Score         int    `json:"score"`
+}
+
 func GetCouncilor(id int) (Councilor, error) {
 	var c Councilor
 	cmd := "SELECT id,name,commitee,imagepath,birthday,address,contact,url FROM councilors WHERE id = ?"
@@ -64,4 +69,24 @@ func GetCouncilorList() (councilors []Councilor, err error) {
 	rows.Close()
 
 	return councilors, err
+}
+
+func GetTopFiveOfCouncilors() (councilorsRanking []CouncilorsRanking, err error) {
+	cmd := "SELECT councilors.name , COUNT(*) AS score FROM favorite JOIN councilors ON favorite.councilor_id = councilors.id GROUP BY councilors.name ORDER BY 2 DESC LIMIT 5"
+	rows, err := Db.Query(cmd)
+	if err != nil {
+		log.Fatalln(err)
+	}
+	for rows.Next() {
+		var cr CouncilorsRanking
+		err = rows.Scan(
+			&cr.CouncilorName,
+			&cr.Score,
+		)
+		if err != nil {
+			log.Fatalln(err)
+		}
+		councilorsRanking = append(councilorsRanking, cr)
+	}
+	return councilorsRanking, err
 }
