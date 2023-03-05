@@ -42,6 +42,7 @@ func StartMainServer() {
 	e.GET("/councilors/ranking", getRankingOfCouncilors)
 	e.GET("/category", getCategory)
 	e.GET("/questions/:id", getQuestionsByCouncilorId)
+	e.GET("/questions/category/:id", getQuestionsByCategory)
 
 	//user情報をDBへ登録
 	e.POST("/register_user", registerUser)
