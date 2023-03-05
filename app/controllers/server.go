@@ -48,6 +48,7 @@ func StartMainServer() {
 	e.POST("/register_user", registerUser)
 	e.POST("/login", login)
 	e.POST("/favorite/councilor", registerUsersFavoriteCouncilor)
+	e.POST("/favorite/category", registerUsersFavoriteCategory)
 
 	// Start server
 	e.Logger.Fatal(e.Start(":1323"))

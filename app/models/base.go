@@ -95,7 +95,7 @@ func init() {
 			id INT AUTO_INCREMENT PRIMARY KEY,
 			user_id INTEGER,
 			councilor_id INTEGER,
-			category TEXT,
+			category_id INTEGER,
 			created_at DATETIME)`, tableNameFavorite)
 
 	_, err = Db.Exec(cmdF)
