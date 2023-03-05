@@ -879,3 +879,26 @@
 2023/03/05 14:45:41 route_question.go:23: 数字をキャッチ
 2023/03/05 14:47:57 route_question.go:16: 文字列をキャッチ
 2023/03/05 14:50:09 route_question.go:23: 数字をキャッチ
+2023/03/05 15:19:20 route_question.go:16: 文字列をキャッチ
+2023/03/05 20:42:45 questions.go:111: sql: Scan error on column index 0, name "category": converting driver.Value type []uint8 ("企画・財政") to a int: invalid syntax
+2023/03/05 20:46:46 route_question.go:16: 文字列をキャッチ
+2023/03/05 20:47:23 route_question.go:23: 数字をキャッチ
+2023/03/05 21:43:20 route_question.go:51: strconv.Atoi: parsing "[object%20Object]": invalid syntax
+2023/03/05 21:49:50 route_question.go:51: strconv.Atoi: parsing "[object%20Object]": invalid syntax
+2023/03/05 21:51:41 route_question.go:51: strconv.Atoi: parsing "[object%20Object]": invalid syntax
+2023/03/05 21:53:15 route_question.go:51: strconv.Atoi: parsing "[object%20Object]": invalid syntax
+2023/03/05 21:53:28 route_question.go:23: 数字をキャッチ
+2023/03/05 21:54:09 route_question.go:23: 数字をキャッチ
+2023/03/05 21:54:31 route_question.go:23: 数字をキャッチ
+2023/03/05 21:57:41 route_question.go:50: request取得
+2023/03/05 21:57:41 route_question.go:52: strconv.Atoi: parsing "undefined": invalid syntax
+2023/03/05 21:59:08 route_question.go:50: 1
+2023/03/05 21:59:17 route_question.go:50: 2
+2023/03/05 22:00:35 route_question.go:23: 数字をキャッチ
+2023/03/05 22:00:42 route_question.go:23: 数字をキャッチ
+2023/03/05 22:00:45 route_question.go:23: 数字をキャッチ
+2023/03/05 22:00:53 route_question.go:50: 1
+2023/03/05 22:00:58 route_question.go:50: 8
+2023/03/05 22:02:15 route_question.go:50: 2
+2023/03/05 22:02:19 route_question.go:50: 3
+2023/03/05 22:02:26 route_question.go:23: 数字をキャッチ

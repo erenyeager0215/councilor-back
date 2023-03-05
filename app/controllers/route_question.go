@@ -28,19 +28,31 @@ func getQuestionsByCouncilorId(c echo.Context) error {
 	return c.JSON(http.StatusCreated, questions)
 }
 
-
-func getQuestions(c echo.Context)error{
-	questionList,err:= models.GetQuestionList()
-	if err != nil{
+func getQuestions(c echo.Context) error {
+	questionList, err := models.GetQuestionList()
+	if err != nil {
 		log.Fatal(err)
 	}
-	return c.JSON(http.StatusCreated,questionList)
+	return c.JSON(http.StatusCreated, questionList)
 }
 
-func getCategory(c echo.Context)error{
-	categories,err:=models.GetQuestionsCategory()
-	if err != nil{
+func getCategory(c echo.Context) error {
+	categories, err := models.GetCategory()
+	if err != nil {
 		log.Fatal(err)
 	}
-	return c.JSON(http.StatusCreated,categories)
+	return c.JSON(http.StatusCreated, categories)
+}
+
+func getQuestionsByCategory(c echo.Context) error {
+	categoryId := c.Param("id")
+	id, err := strconv.Atoi(categoryId)
+	if err != nil {
+		log.Println(err)
+	}
+	questions, err := models.GetQuestionsByCategory2(id)
+	if err != nil {
+		log.Println(err)
+	}
+	return c.JSON(http.StatusCreated, questions)
 }
