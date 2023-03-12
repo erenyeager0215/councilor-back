@@ -904,3 +904,9 @@
 2023/03/05 22:02:26 route_question.go:23: 数字をキャッチ
 2023/03/05 22:23:03 route_question.go:23: 数字をキャッチ
 2023/03/05 22:38:11 route_question.go:23: 数字をキャッチ
+2023/03/12 14:21:41 route_question.go:23: 数字をキャッチ
+2023/03/12 14:21:45 users_favorite.go:26: 議員・カテゴリのお気に入り登録がしていません
+2023/03/12 14:21:45 route_userFavorite.go:23: sql: Scan error on column index 3, name "category_id": converting NULL to int is unsupported
+2023/03/12 14:21:46 users_favorite.go:47: sql: Scan error on column index 3, name "category_id": converting NULL to int is unsupported
+2023/03/12 16:33:24 users_favorite.go:26: 議員・カテゴリのお気に入り登録がしていません
+2023/03/12 16:33:24 route_auth.go:39: sql: Scan error on column index 3, name "category_id": converting NULL to int is unsupported

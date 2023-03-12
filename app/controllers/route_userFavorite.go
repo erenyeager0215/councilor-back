@@ -47,12 +47,31 @@ func registerUsersFavoriteCouncilor(c echo.Context) error {
 }
 
 func registerUsersFavoriteCategory(c echo.Context) error {
-		userFav:=new(models.UserFav)
-		if err:= c.Bind(userFav); err != nil{
-			log.Fatalln(err)
+	newUserFav := new(models.UserFav)
+	if err := c.Bind(newUserFav); err != nil {
+		log.Fatalln(err)
+	}
+
+	responseUserFav := &models.ResponseUser{}
+	currentUserFav, err := models.GetFavoriteByUserId(newUserFav.User_id)
+	if err != nil {
+		log.Println(err)
+	}
+
+	//もし登録しているカテゴリが以前に登録しているものと違った場合(カテゴリの更新)
+	if currentUserFav.Category_id != newUserFav.Category_id {
+		modifiedUserInfo, err := newUserFav.PutFavoriteCategory()
+		if err != nil {
+			log.Println(err)
 		}
+		responseUserFav.UserID = modifiedUserInfo.User_id
+		responseUserFav.Favorite = modifiedUserInfo
+		return c.JSON(http.StatusCreated, responseUserFav)
+	}
 
-		responseUserFav := &models.ResponseUser{}
-		userFavCategory,err := 
+	//登録してるカテゴリがない場合（カテゴリの新規登録）
 
+	responseUserFav.UserID = currentUserFav.User_id
+	responseUserFav.Favorite = currentUserFav
+	return c.JSON(http.StatusCreated, responseUserFav)
 }

@@ -36,11 +36,12 @@ func (user_fav *UserFav) PostFavoriteCouncilor() (UserFav, error) {
 		log.Fatalln(err)
 	}
 
-	cmd2 := `SELECT id,user_id,councilor_id FROM favorite WHERE user_id = ?`
+	cmd2 := `SELECT id,user_id,councilor_id,category_id FROM favorite WHERE user_id = ?`
 	err = Db.QueryRow(cmd2, user_fav.User_id).Scan(
 		&user_fav.Id,
 		&user_fav.User_id,
 		&user_fav.Councilor_id,
+		&user_fav.Category_id,
 	)
 	if err != nil {
 		log.Fatalln(err)
@@ -56,15 +57,36 @@ func (user_fav *UserFav) PutFavoriteCouncilor() (UserFav, error) {
 	if err != nil {
 		log.Fatalln(err)
 	}
-	cmd2 := `SELECT id,user_id,councilor_id FROM favorite WHERE user_id = ?`
+	cmd2 := `SELECT id,user_id,councilor_id,category_id FROM favorite WHERE user_id = ?`
 	err = Db.QueryRow(cmd2, user_fav.User_id).Scan(
 		&user_fav.Id,
 		&user_fav.User_id,
 		&user_fav.Councilor_id,
+		&user_fav.Category_id,
 	)
 	if err != nil {
 		log.Fatalln(err)
 	}
 	log.Println("支持する議員を更新しました")
+	return *user_fav, err
+}
+
+func (user_fav *UserFav) PutFavoriteCategory() (UserFav, error) {
+	cmd1 := `UPDATE favorite SET category_id = ? WHERE user_id = ?`
+	_, err := Db.Exec(cmd1, user_fav.Category_id, user_fav.User_id)
+	if err != nil {
+		log.Fatalln(err)
+	}
+	cmd2 := `SELECT id,user_id,councilor_id,category_id FROM favorite WHERE user_id = ?`
+	err = Db.QueryRow(cmd2, user_fav.User_id).Scan(
+		&user_fav.Id,
+		&user_fav.User_id,
+		&user_fav.Councilor_id,
+		&user_fav.Category_id,
+	)
+	if err != nil {
+		log.Fatalln(err)
+	}
+	log.Println("カテゴリを更新しました")
 	return *user_fav, err
 }
