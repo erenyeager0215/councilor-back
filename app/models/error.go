@@ -9,5 +9,5 @@ func (e *NoRecordError) Error() string {
 }
 
 func RaiseError() error {
-	return &NoRecordError{Massage: "支持する議員を登録していません"}
+	return &NoRecordError{Massage: "議員・カテゴリのお気に入り登録がしていません"}
 }
