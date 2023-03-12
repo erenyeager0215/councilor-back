@@ -49,6 +49,8 @@ func registerUsersFavoriteCouncilor(c echo.Context) error {
 func registerUsersFavoriteCategory(c echo.Context) error {
 	newUserFav := new(models.UserFav)
 	if err := c.Bind(newUserFav); err != nil {
+		log.Println(newUserFav.User_id)
+		log.Println(newUserFav.Category_id)
 		log.Fatalln(err)
 	}
 

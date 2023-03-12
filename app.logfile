@@ -910,3 +910,21 @@
 2023/03/12 14:21:46 users_favorite.go:47: sql: Scan error on column index 3, name "category_id": converting NULL to int is unsupported
 2023/03/12 16:33:24 users_favorite.go:26: 議員・カテゴリのお気に入り登録がしていません
 2023/03/12 16:33:24 route_auth.go:39: sql: Scan error on column index 3, name "category_id": converting NULL to int is unsupported
+2023/03/12 19:49:34 users_favorite.go:26: 議員・カテゴリのお気に入り登録がしていません
+2023/03/12 19:49:34 route_userFavorite.go:58: sql: Scan error on column index 3, name "category_id": converting NULL to int is unsupported
+2023/03/12 19:56:37 users_favorite.go:90: カテゴリを更新しました
+2023/03/12 20:00:51 route_userFavorite.go:52: code=400, message=Unmarshal type error: expected=int, got=string, field=category_id, offset=30
+2023/03/12 20:02:04 route_userFavorite.go:51: &{0 0 0 0 0001-01-01 00:00:00 +0000 UTC}
+2023/03/12 20:02:05 route_userFavorite.go:53: code=400, message=Unmarshal type error: expected=int, got=string, field=category_id, offset=30
+2023/03/12 20:04:28 route_userFavorite.go:13: &{0 0 0 0 0001-01-01 00:00:00 +0000 UTC}
+2023/03/12 20:04:28 users_favorite.go:70: 支持する議員を更新しました
+2023/03/12 20:07:41 route_userFavorite.go:52: &{0 0 0 0 0001-01-01 00:00:00 +0000 UTC}
+2023/03/12 20:07:41 route_userFavorite.go:54: code=400, message=Unmarshal type error: expected=int, got=string, field=category_id, offset=30
+2023/03/12 20:14:46 route_userFavorite.go:51: 0
+2023/03/12 20:14:46 route_userFavorite.go:53: code=400, message=Unmarshal type error: expected=int, got=string, field=category_id, offset=30
+2023/03/12 20:18:36 route_userFavorite.go:51: 0
+2023/03/12 20:18:36 route_userFavorite.go:52: 0
+2023/03/12 20:18:36 route_userFavorite.go:54: code=400, message=Unmarshal type error: expected=int, got=string, field=category_id, offset=30
+2023/03/12 20:24:07 users_favorite.go:90: カテゴリを更新しました
+2023/03/12 20:34:56 users_favorite.go:90: カテゴリを更新しました
+2023/03/12 20:45:08 users_favorite.go:90: カテゴリを更新しました
