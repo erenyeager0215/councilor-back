@@ -93,7 +93,7 @@ func init() {
 
 	cmdF := fmt.Sprintf(`CREATE TABLE IF NOT EXISTS %s(
 			id INT AUTO_INCREMENT PRIMARY KEY,
-			user_id INTEGER,
+			user_id INTEGER UNIQUE,
 			councilor_id INTEGER,
 			category_id INTEGER,
 			created_at DATETIME)`, tableNameFavorite)
