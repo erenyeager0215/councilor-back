@@ -10,6 +10,9 @@ type User struct {
 	Uuid      string    `json:"uuid"`
 	NickName  string    `json:"nickname"`
 	PassWord  string    `json:"password"`
+	Birthday  time.Time `json:"birthday"`
+	Gender    string    `json:"gender"`
+	Home      string    `json:"home"`
 	CreatedAt time.Time `json:"created_at"`
 }
 
@@ -31,14 +34,20 @@ func (u *User) CreateUser() (err error) {
 		uuid,
 		nickname,
 		password,
-		created_at
-	) VALUES(?,?,?,?)`
+		birthday,
+		created_at,
+		gender,
+		home
+	) VALUES(?,?,?,?,?,?,?)`
 
 	_, err = Db.Exec(cmd,
 		createUUID(),
 		u.NickName,
 		Encrypt(u.PassWord),
+		u.Birthday,
 		time.Now(),
+		u.Gender,
+		u.Home,
 	)
 	if err != nil {
 		log.Fatal(err)

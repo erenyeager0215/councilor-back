@@ -54,9 +54,10 @@ func login(c echo.Context) error {
 func registerUser(c echo.Context) error {
 	u := new(models.User)
 	if err := c.Bind(u); err != nil {
+		log.Println(u)
+		log.Println(err)
 		return err
 	}
-	log.Print(u)
 
 	err := u.CreateUser()
 	if err != nil {

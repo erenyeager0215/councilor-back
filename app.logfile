@@ -931,3 +931,33 @@
 2023/03/12 21:31:05 users_favorite.go:90: カテゴリを更新しました
 2023/03/12 21:32:28 users_favorite.go:90: カテゴリを更新しました
 2023/03/14 22:05:39 users_favorite.go:90: カテゴリを更新しました
+2023/04/26 21:58:58 base.go:45: dial tcp [::1]:3307: connectex: No connection could be made because the target machine actively refused it.
+2023/04/29 16:06:00 base.go:47: Error 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 10
+2023/04/29 16:08:32 route_auth.go:59: &{0  ああああ aaaa 0001-01-01 00:00:00 +0000 UTC 女性 市外 0001-01-01 00:00:00 +0000 UTC}
+2023/04/29 16:08:32 users.go:53: Error 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') VALUES(?,?,?,?,?,?,?)' at line 9
+2023/04/29 17:07:44 route_auth.go:56: &{0    0001-01-01 00:00:00 +0000 UTC   0001-01-01 00:00:00 +0000 UTC}
+2023/04/29 17:11:40 route_auth.go:56: &{0    0001-01-01 00:00:00 +0000 UTC   0001-01-01 00:00:00 +0000 UTC}
+2023/04/29 17:13:11 route_auth.go:56: &{0    0001-01-01 00:00:00 +0000 UTC   0001-01-01 00:00:00 +0000 UTC}
+2023/04/29 17:15:21 route_auth.go:57: &{0  22222 2222222 0001-01-01 00:00:00 +0000 UTC   0001-01-01 00:00:00 +0000 UTC}
+2023/04/29 17:27:08 route_auth.go:57: &{0  ああああ aaaaaaaaaa 0001-01-01 00:00:00 +0000 UTC   0001-01-01 00:00:00 +0000 UTC}
+2023/04/29 17:27:41 route_auth.go:57: &{0  aaaaaa aaaass 0001-01-01 00:00:00 +0000 UTC   0001-01-01 00:00:00 +0000 UTC}
+2023/04/29 17:33:39 route_auth.go:57: &{0  ｒｒｒｒ rrrr 0001-01-01 00:00:00 +0000 UTC   0001-01-01 00:00:00 +0000 UTC}
+2023/04/29 17:33:39 route_auth.go:58: code=400, message=parsing time "\"2005-11-16\"" as "\"2006-01-02T15:04:05Z07:00\"": cannot parse "\"" as "T"
+2023/04/30 14:51:32 route_auth.go:57: &{0  ２２２２２２２２ 22222222 0001-01-01 00:00:00 +0000 UTC   0001-01-01 00:00:00 +0000 UTC}
+2023/04/30 14:51:32 route_auth.go:58: code=400, message=parsing time "\"2009-05-15\"" as "\"2006-01-02T15:04:05Z07:00\"": cannot parse "\"" as "T"
+2023/04/30 14:52:59 route_auth.go:57: &{0  111111 111111111 0001-01-01 00:00:00 +0000 UTC   0001-01-01 00:00:00 +0000 UTC}
+2023/04/30 14:52:59 route_auth.go:58: code=400, message=parsing time "\"2004-01-31\"" as "\"2006-01-02T15:04:05Z07:00\"": cannot parse "\"" as "T"
+2023/04/30 14:56:05 users.go:53: Error 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') VALUES(?,?,?,?,?,?,?)' at line 9
+2023/04/30 15:03:49 users_favorite.go:26: 議員・カテゴリのお気に入り登録がしていません
+2023/04/30 15:03:49 route_auth.go:39: sql: no rows in result set
+2023/04/30 15:04:08 users_favorite.go:26: 議員・カテゴリのお気に入り登録がしていません
+2023/04/30 15:04:08 route_userFavorite.go:23: sql: no rows in result set
+2023/04/30 15:04:08 users_favorite.go:47: sql: Scan error on column index 3, name "category_id": converting NULL to int is unsupported
+2023/04/30 15:17:31 route_userFavorite.go:14: code=400, message=Unmarshal type error: expected=sql.NullInt64, got=number, field=councilor_id, offset=29
+2023/04/30 15:21:42 users_favorite.go:70: 支持する議員を更新しました
+2023/04/30 15:21:59 users_favorite.go:90: カテゴリを更新しました
+2023/04/30 15:23:03 users_favorite.go:26: 議員・カテゴリのお気に入り登録がしていません
+2023/04/30 15:23:03 route_auth.go:39: sql: Scan error on column index 3, name "category_id": converting NULL to int is unsupported
+2023/04/30 15:23:40 users_favorite.go:26: 議員・カテゴリのお気に入り登録がしていません
+2023/04/30 15:23:40 route_userFavorite.go:60: sql: Scan error on column index 3, name "category_id": converting NULL to int is unsupported
+2023/04/30 15:23:40 users_favorite.go:90: カテゴリを更新しました

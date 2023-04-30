@@ -37,7 +37,9 @@ func init() {
 		nickname VARCHAR(50) NOT NULL UNIQUE,
 		password VARCHAR(100) NOT NULL,
 		birthday DATE,
-		created_at DATETIME
+		created_at DATETIME,
+		gender VARCHAR(10),
+		home VARCHAR(10)
 		)`, tabelNameUser)
 
 	_, err = Db.Exec(cmdU)
