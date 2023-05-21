@@ -20,7 +20,7 @@ func registerUsersFavoriteCouncilor(c echo.Context) error {
 
 	// もし、ユーザが支持する議員がいない場合新規で支持者を登録する
 	if err != nil {
-		log.Println(err)
+		log.Println(uf)
 		user_newfav, err := uf.PostFavoriteCouncilor()
 		if err != nil {
 			log.Println(err)

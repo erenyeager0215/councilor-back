@@ -29,6 +29,7 @@ func getQuestions(c echo.Context) error {
 
 func getCategory(c echo.Context) error {
 	categories, err := models.GetCategory()
+	log.Println(categories)
 	if err != nil {
 		log.Fatal(err)
 	}

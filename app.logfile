@@ -961,3 +961,4 @@
 2023/04/30 15:23:40 users_favorite.go:26: 議員・カテゴリのお気に入り登録がしていません
 2023/04/30 15:23:40 route_userFavorite.go:60: sql: Scan error on column index 3, name "category_id": converting NULL to int is unsupported
 2023/04/30 15:23:40 users_favorite.go:90: カテゴリを更新しました
+2023/05/12 21:38:21 base.go:47: dial tcp [::1]:3307: connectex: No connection could be made because the target machine actively refused it.

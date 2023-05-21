@@ -16,6 +16,11 @@ type User struct {
 	CreatedAt time.Time `json:"created_at"`
 }
 
+type UserData struct {
+	GroupAge    string `json:"group_age"`
+	NumOfPeople int    `json:"num_of_people"`
+}
+
 type ResponseUser struct {
 	UserID   int     `json:"user_id"`
 	Favorite UserFav `json:"favorite"`
@@ -67,6 +72,27 @@ func GetUser(u *User) (user User, err error) {
 		log.Println(err)
 	}
 	return user, err
+}
+
+func GetUserData() (userData []UserData, err error) {
+	// 年代別ユーザ数を取得
+	cmd := "SELECT CASE WHEN age <= 19 THEN '19s' WHEN age BETWEEN 20 AND 29 THEN '20s' WHEN age BETWEEN 30 AND 39 THEN '30s' WHEN age BETWEEN 40 AND 49 THEN '40s' WHEN age BETWEEN 50 AND 59 THEN '50s' WHEN age BETWEEN 60 AND 69 THEN '60s' WHEN age BETWEEN 70 AND 79 THEN '70s' ELSE '80~'  END AS GroupAge,COUNT(*) AS NumOfPeople FROM (SELECT id,TIMESTAMPDIFF(YEAR, `birthday`, CURDATE()) AS age FROM users)AS age_table GROUP BY GroupAge ORDER BY 1 ASC"
+	rows, err := Db.Query(cmd)
+	if err != nil {
+		log.Fatalln(err)
+	}
+	for rows.Next() {
+		var ud UserData
+		err = rows.Scan(
+			&ud.GroupAge,
+			&ud.NumOfPeople,
+		)
+		if err != nil {
+			log.Fatalln(err)
+		}
+		userData = append(userData, ud)
+	}
+	return userData, err
 }
 
 func (user *User) CreateSession() (sesson Session, err error) {

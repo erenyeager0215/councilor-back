@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"myapp/app/models"
 	"net/http"
+	"runtime"
 
 	"github.com/labstack/echo"
 	"github.com/labstack/echo/middleware"
@@ -25,9 +26,10 @@ func StartMainServer() {
 	e := echo.New()
 
 	e.Use(middleware.CORSWithConfig(middleware.CORSConfig{
-		AllowOrigins:     []string{"http://localhost:3000"},
-		AllowHeaders:     []string{echo.HeaderOrigin, echo.HeaderContentType, echo.HeaderAccept},
-		AllowCredentials: true,
+		AllowOrigins: []string{"*"},
+		// AllowOrigins: []string{"http://localhost:80"},
+		AllowHeaders: []string{echo.HeaderOrigin, echo.HeaderContentType, echo.HeaderAccept},
+		// AllowCredentials: true,
 	}))
 
 	// Debug mode
@@ -35,11 +37,12 @@ func StartMainServer() {
 
 	// Handler
 	e.GET("/", func(c echo.Context) error {
-		return c.String(http.StatusOK, "Hello, World!")
+		return c.String(http.StatusOK, runtime.Version())
 	})
 	e.GET("/councilor/:id", getCouncilor)
 	e.GET("/councilors", getCouncilors)
 	e.GET("/councilors/ranking", getRankingOfCouncilors)
+	e.GET("/user-data", getUserData)
 	e.GET("/category", getCategory)
 	e.GET("/questions/:id", getQuestionsByCouncilorId)
 	e.GET("/questions/category/:id", getQuestionsByCategory)
